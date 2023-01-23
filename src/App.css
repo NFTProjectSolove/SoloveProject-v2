@@ -96,11 +96,8 @@ h2, p{
 
 }
 .navbarLogo{
-  margin-left:100px;
-  margin-top:10px;
-}
-.navbarLogo img{
-  height:'30px'
+  margin-left:calc(50px + 5vw);
+  margin-top:0px;
 }
 
 .navbarMenu{
@@ -113,6 +110,7 @@ h2, p{
   text-decoration: none;
   margin: 22px;
 }
+
 
 /*MainHome */
 .imgContainer{
