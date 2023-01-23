@@ -777,113 +777,37 @@ h2, p{
 }
 
 
-
+/* Roadmap CSS ▽ */
 .Roadmapwall {
-  width:'100%';
-  height:'100%';
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
   background-image: url(./img/roadmapwall.png);
   background-size : contain;
   background-color: black;
-  position:'relative';
+  position:'absolute';
   background-repeat: no-repeat;
   overflow: hidden;
+  right : 0%;
 }
 
-.Circle {
+.wallpluscircle {
   width: 100vw;
-  height: 203vh;
+  height: 190vh;
   border: 15px solid rgb(255, 255, 255);
   border-radius: 50%;
   position: relative;
-  top : 165px;
-  right : 10px;
+  top : 27vh;
+  right : 0%;
 }
 
-
-.sloguncontainer {
-  margin-top: 10vh;
-  position: relative;
-}
-
-.scrolling-text {
-  display: inline-block;
-  will-change: transform;
-  overflow-x: scroll;
-  max-width: 100%;
-}
-
-.scrolling-text-content {
-  font-size: 120px;
-  font-weight: bold;
-  white-space: nowrap;
-  line-height: 1em;
-  margin: 50px 0;
-  text-decoration-color: linear-gradient(right, white, purple);
-}
-
-@keyframes message{
-  from, to, 65% {transform: translate(-50%, 0)}
-  25% {transform: translate(-50%, 60px)}
-  26% {transform: translate(-50%, -60px)}
-
-}
-
-.Scrolldown {
-  height: 17px;
-  margin: auto;
-  position: relative;
-  overflow:hidden;
-  cursor: pointer;
-  width: 320px;
-  height: 40px;
-  font-family: 'Open Sans', sans-serif;
-  top : 150px;
-  z-index: 1;
-}
-
-.Scrolldowntext {
-  margin: 12px 0;
-  left: 50%;
-  transform: translateX(-50%);
-  text-transform: uppercase;
-  font-weight: bold 700;
-  position: absolute;
-  top: 0px;
-  color : rgba(140, 140, 140, 0.7)
-}
-
-.Scrolldowntext{
-  animation: message 2s cubic-bezier(0.645,.045,.355,1) infinite;
-}
-
-
-
-
-.Roadmapwall {
-  width:'100%';
-  height:1300px;
-  background-image: url(./img/roadmapwall.png);
-  background-size : contain;
-  background-color: black;
-  position:'relative';
-  background-repeat: no-repeat;
-  overflow: hidden;
-}
-
-.Circle {
-  width: 100vw;
-  height: 200vh;
-  border: 15px solid rgb(255, 255, 255);
-  position: relative;
-  top : 210px;
-  right : 15px;
-}
 
 .slideText-wrap2{
-  width: 100vw;
+  width: 98.5vw;
   height: 200vh;
   border-radius: 50%;
   overflow: hidden;
+  right : 50%;
 }
 
 .slideText-wrap {
@@ -970,6 +894,8 @@ h2, p{
   }
 }
 
+/* Roadmap CSS end */
+
 .Appa {
   text-align: center;
 }
@@ -1034,4 +960,30 @@ h2, p{
 .Appa p{
   color: #000;
   font-size: 16px;
+}
+
+/* mint page css */
+
+.mintwall {
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  background-image: url(./img/mintwall.png);
+  background-size : contain;
+  background-color: #000;
+  position: relative;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.mintcharactor {
+  width: 50vw;
+  height: 70vh;
+  right: 15vw;
+  background-repeat: no-repeat;
+  background-size : contain;
+  overflow: hidden;
+  background-image: url(./img/mintcharactor.png);
+  position: relative;
 }

@@ -39,36 +39,13 @@ function Roadmap(){
     }
 
     
-    function Scrolldown (){
-
-        const scrollToTop = () => {
-            window.scroll({
-                top: 300,
-                behavior: 'smooth'
-            })
-  
-        }
-        
-        return (
-  
-          <div className = "Scrolldown" onClick={scrollToTop}>
-              <p className='Scrolldowntext'>scroll down</p>
-          </div>
-  
-        )
-      }
 
     return(
-<div>
-                <div className = 'Roadmapwall'>
-                      <Scrolldown></Scrolldown>
-                    <div className = "Circle">
-                        <Slogun></Slogun>
-                    </div>
-                </div>
+      <div className = 'Roadmapwall'>
+        <div className = 'wallpluscircle'>
+          <Slogun></Slogun>
         </div>
-        
-        
+      </div>    
     )
 };
 
