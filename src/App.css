@@ -779,8 +779,8 @@ h2, p{
 
 /* Roadmap CSS ▽ */
 .Roadmapwall {
-  width: 100vw;
-  height: 100vh;
+  width: '100%';
+  height: '100%';
   align-items: center;
   background-image: url(./img/roadmapwall.png);
   background-size : contain;
@@ -788,6 +788,7 @@ h2, p{
   position:'absolute';
   background-repeat: no-repeat;
   overflow: hidden;
+  padding-top: 14vw;
   right : 0%;
 }
 
@@ -795,19 +796,19 @@ h2, p{
   width: 100vw;
   height: 190vh;
   border: 15px solid rgb(255, 255, 255);
-  border-radius: 50%;
+  border-radius: 150vh;
+  border-style: double, ridge;
   position: relative;
-  top : 27vh;
-  right : 0%;
 }
 
 
 .slideText-wrap2{
-  width: 98.5vw;
-  height: 200vh;
-  border-radius: 50%;
+  width: 100vw;
+  height: 190vh;
+  border-radius: 150vh;
+  position: relative;
   overflow: hidden;
-  right : 50%;
+  right: 0.8vw;
 }
 
 .slideText-wrap {
@@ -896,16 +897,24 @@ h2, p{
 
 /* Roadmap CSS end */
 
+/* FAQ CSS start*/
+
+.FAQtext {
+  font-size: 50px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 5vh;
+}
+
 .Appa {
   text-align: center;
 }
 
 .question-section {
-  background: rgb(255, 238, 255);
   opacity: 0.9;
-  border: transparent;
-  border-radius: 8px;
-  box-shadow: rgba(60, 64, 67, 0.05) 0px 1px 3px 1px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 60px;
   cursor: pointer;
   width: 50vw;
   padding: 5px 0 5px 0;
@@ -914,28 +923,31 @@ h2, p{
 .question-align {
   align-items: center;
   display: flex;
-  min-height: 10px;
-  text-align: left;
+  min-height: 40px;
+  text-align: center;
 }
 
 .question-align h4 {
-  font-size: 18px;
+  font-size: 25px;
   margin-left: 15px;
   font-weight: lighter;
 }
 
-.question-styling {
+.question-style {
   width: 100%;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
 }
 
 .question-icon {
   background: none;
   border: none;
-  color: #be61c0;
+  color: #ffffff;
   cursor: pointer;
   font-size: 20px;
   margin-left: auto;
-  margin-right: 8px;
+  margin-right: 15px;
 
 }
 
@@ -953,28 +965,26 @@ h2, p{
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.6s ease;
-  text-align: left;
+  text-align: center;
 
 }
 
 .Appa p{
-  color: #000;
-  font-size: 16px;
+  color: rgb(255, 255, 255);
+  font-size: 15px;
 }
 
 /* mint page css */
 
 .mintwall {
-  width: 100vw;
-  height: 100vh;
+  width: 200%;
+  height: 200%;
   align-items: center;
   background-image: url(./img/mintwall.png);
   background-size : contain;
-  background-color: #000;
   position: relative;
   background-repeat: no-repeat;
   overflow: hidden;
-  z-index: 0;
 }
 
 .mintcharactor {
