@@ -119,7 +119,7 @@ function Mint() {
       </Text>
     )}
   </div>
-  );
+  )
 }
 
 export default Mint;

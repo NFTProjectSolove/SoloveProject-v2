@@ -12,7 +12,7 @@ function Header(){
       <div id="header">
         <div className="navbar">
           <div className="navbarLogo">
-            <img src="/solovelogo.svg" alt="Logo" style={{height:'30px'}}/>
+            <img src="/solovelogo.svg" alt="Logo" style={{height:'calc(20px + 0.7vw)'}}/>
           </div>
           <div className="navbarMenu">
             <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/'><p>HOME</p></StyledLink>
