@@ -14,7 +14,7 @@ import {
   import abiFile from './abiFile.json';
   import { motion } from 'framer-motion';
   
-  const CONTRACT_ADDRESS = '0x82b6b883D0CCcc2cE1C74baA629F83A3294460cd';
+  const CONTRACT_ADDRESS = '0xaa3906f986e0cd86e64c1e30ce500c1de1ef46ad';
   
   const getOpenSeaURL = (tokenId: string | number) =>
     `https://testnets.opensea.io/assets/goerli/${CONTRACT_ADDRESS}/${tokenId}`;
