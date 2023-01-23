@@ -67,33 +67,27 @@ import {
     }, [tokenURI]);
   
     return (
-      <div className = 'mintwall'>
-      <Container paddingY='10'>
-        <Box
-          as={motion.div}
-          width= '50vw'
-          height= '50vh'
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <div className="mintcharactor"></div>
-        </Box>
-      
-      <ConnectButton />
+      <div className = "mintwall">
+        <div className="mintcharactor">
+          <img alt="char_solove" src="/mintcharactor.png" id="mintcharacterimg"></img>
+        </div>
+
+        <span className="buttonspan">
+        
+          {isConnected && <Button
+            disabled={!isConnected || mintLoading}
+            marginTop='6'
+            onClick={onMintClick}
+            textColor='white' 
+            bg='blue.500'
+            _hover={{
+              bg: 'blue.700',
+            }}
+          >🎉 Mint</Button>}
+        </span>
+        
   
-        <Button
-          disabled={!isConnected || mintLoading}
-          marginTop='6'
-          onClick={onMintClick}
-          textColor='white'
-          bg='blue.500'
-          _hover={{
-            bg: 'blue.700',
-          }}
-        >
-          {isConnected ? '🎉 Mint' : '🎉 Mint (Connect Wallet)'}
-        </Button>
-  
+
         {mintError && (
           <Text marginTop='4'>⛔️ Mint unsuccessful! Error message:</Text>
         )}
@@ -118,7 +112,6 @@ import {
             </Link>
           </Text>
         )}
-      </Container>
       </div>
     );
   }
