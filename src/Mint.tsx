@@ -7,7 +7,6 @@ import {
     Link,
     Skeleton,
   } from '@chakra-ui/react';
-  import { ConnectButton } from '@rainbow-me/rainbowkit';
   import { ethers } from 'ethers';
   import { useEffect, useState } from 'react';
   import { useAccount, useContractRead, useContractWrite } from 'wagmi';
