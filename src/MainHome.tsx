@@ -25,7 +25,7 @@ function MainHome(){
                 <div className="imgContainer" style={{position:'relative', width:'60%', margin:'5px 10px'}}>
                     <span style={{position:'absolute',left:'5%', top:'8%'}}><Image alt='soloveimage1' length={30} src={"/Solove1.jpg"}></Image></span>
                     <span style= {{position:'absolute', right:'8%', top:'5%'}}><Image alt='soloveimage2' length={11} src={"/Solove3.jpg"}></Image></span>
-                    <span style= {{position:'absolute', right:'10%', bottom:'2%'}}><Image alt='soloveimage3' length={18} src={"/Solove2.jpg"}></Image></span>
+                    <span style= {{position:'absolute', right:'10%', bottom:'2%'}}><Image alt='soloveimage3' length={18} src={"/Solove2.gif"}></Image></span>
                 </div>
                 <div className="textContainer">
                     <h1>Welcome to </h1>

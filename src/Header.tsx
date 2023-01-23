@@ -19,7 +19,6 @@ function Header(){
           <div className="navbarLogo">
             <img src="/solovelogo.svg" alt="Logo" style={{height:'30px'}}/>
           </div>
-          
           <div className="navbarMenu">
             <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/'><p>HOME</p></StyledLink>
             <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/About'><p>ABOUT</p></StyledLink>
@@ -27,16 +26,6 @@ function Header(){
             <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/Faq'><p>FAQ</p></StyledLink>
             <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/Mint'><p>MINT</p></StyledLink>
           </div>
-          
-          {/* <Wallet>
-            {wallet ?
-              <WalletAmount>0 sol<ConnectButton2/></WalletAmount> :
-              <ConnectButton>Connect wallet</ConnectButton>}
-              {/* {wallet ?
-                <WalletAmount>{(balance || 0).toLocaleString()} sol<ConnectButton2/></WalletAmount> :
-                <ConnectButton>Connect wallet</ConnectButton>}  
-          </Wallet>*/}
-
         </div>
       </div>
     )

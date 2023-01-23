@@ -12,22 +12,24 @@ const Image = styled.img`
 `; 
 
 const SliderContainerWrap = styled.div`
-
 `;
 
 const SliderContainer = styled.div`
   position: relative;
   width: calc(${itemSize*2}px + 40vw);
   height: calc(${itemSize}px + 20vw);
-  overflow: hidden;
+  overflow:hidden;
 `;
 
 const SliderButton = styled.div`
   position: absolute;
   width: calc(15px + 1vw);
   height: calc(15px + 1vw);
-  background-color: grey;
+  background: tranparent;
+  cursor: pointer;
   margin-top:calc(${-1*itemSize/2-10}px - 10vw);
+  filter: invert(100%);
+  opacity:0.7;
 `;
 
 const ImgBox =styled.div`
@@ -40,30 +42,11 @@ const CSSBox= styled.div`
 width: calc(${itemSize*2}px + 40vw);
 height: calc(${itemSize}px + 20vw);
   box-shadow:5px 5px 40px 5px rgba(0,0,0,0.5);
-
 `;
-// 그림위아래에 ㄴ ㄱ 붙이는 css
-// :before{
-//   position:absolute;
-//   color: rgb(170,170,170,0.5);
-//   bottom:-55px;
-//   left: 30px;
-//   font-size:74px;
-//   content:'ㄴ';
-  
-// }
-// :after{
-//   position:absolute;
-//   color: rgb(170,170,170,0.5);
-//   top:-55px;
-//   right: 28px;
-//   font-size:74px;
-//   content: 'ㄱ';
-// }
 
 function Slider(){
     const [currentIndex,SetCurrentIndex] = useState(1);
-    const imageSrc1 = ["slide1.jpg","slide2.jpg","slide3.jpg","slide4.jpg","slide5.jpg","slide6.jpg","slide7.jpg","slide8.jpg"]; //src는 다 다른걸로 해주세요
+    const imageSrc1 = ["slide1.jpg","slide2.jpg","slide3.jpg"]; //src는 다 다른걸로 해주세요
     const imageSrc = [imageSrc1[imageSrc1.length-1]].concat(imageSrc1,imageSrc1[0]) 
     const imageContainer = imageSrc.map((src,idx) => (<Image src={src} key={idx} />));
     const [transitionTime, SettimeIndex] = useState(0.2);
@@ -129,8 +112,8 @@ function Slider(){
             </ImgBox>
           </div>
         </SliderContainer>
-          <SliderButton className="SlideButtonPrev" style={{marginLeft:`calc(0px - 1vw - 15px)`, transform:`translateX(calc(0px - 1vw - 10px))`}} onClick={() => ClickPrev()}></SliderButton>
-          <SliderButton className="SlideButtonNext" style={{marginLeft:`calc(${(2*itemSize)}px + 40vw)`, transform:`translateX(calc(1vw + 10px))`}} onClick={() => ClickNext()}></SliderButton>
+          <SliderButton className="SlideButtonPrev" style={{marginLeft:`calc(0px - 1vw - 15px)`, transform:`translateX(calc(0px - 1vw - 10px))`}} onClick={() => ClickPrev()}><img src='slidebutton.png' style={{  width: 'calc(15px + 1vw)', height: 'calc(15px + 1vw);'}}></img></SliderButton>
+          <SliderButton className="SlideButtonNext" style={{marginLeft:`calc(${(2*itemSize)}px + 40vw)`, transform:`translateX(calc(1vw + 10px))`}} onClick={() => ClickNext()}><img src='slidebutton.png' style={{  width: 'calc(15px + 1vw)', height: 'calc(15px + 1vw);', transform: 'scaleX(-1)'}}></img></SliderButton>
         </SliderContainerWrap>
       </CSSBox>
     );
