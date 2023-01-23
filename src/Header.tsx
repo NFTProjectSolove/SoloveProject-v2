@@ -1,11 +1,6 @@
-// import React, {useEffect, useState} from 'react';
-// import {FaTwitter,FaDiscord,FaInstagram,FaTelegram,FaShoppingCart,FaHome} from "react-icons/fa";
 import styled from "styled-components";
 import { NavLink } from 'react-router-dom';    
-// import {LAMPORTS_PER_SOL, PublicKey} from "@solana/web3.js";
-// import * as anchor from "@project-serum/anchor";
-// import {useAnchorWallet} from "@solana/wallet-adapter-react";
-// import {WalletMultiButton} from "@solana/wallet-adapter-react-ui";
+import {ConnectButton} from '@rainbow-me/rainbowkit';
 
 const StyledLink = styled(NavLink)`
   margin: 30px;
@@ -25,6 +20,9 @@ function Header(){
             <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/Roadmap'><p>ROADMAP</p></StyledLink>
             <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/Faq'><p>FAQ</p></StyledLink>
             <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/Mint'><p>MINT</p></StyledLink>
+          </div>
+          <div>
+            <ConnectButton />
           </div>
         </div>
       </div>

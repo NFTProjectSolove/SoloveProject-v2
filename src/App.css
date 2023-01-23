@@ -977,23 +977,31 @@ h2, p{
 /* mint page css */
 
 .mintwall {
-  width: 200%;
-  height: 200%;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
   align-items: center;
   background-image: url(./img/mintwall.png);
-  background-size : contain;
-  position: relative;
+  background-size : cover;
   background-repeat: no-repeat;
   overflow: hidden;
+  z-index: 0;
+}
+.mintcharactor{
+  position:relative;
+  width:50vw;
 }
 
-.mintcharactor {
-  width: 50vw;
-  height: 70vh;
-  right: 15vw;
-  background-repeat: no-repeat;
-  background-size : contain;
-  overflow: hidden;
-  background-image: url(./img/mintcharactor.png);
-  position: relative;
+#solove_character{
+  width:100%;
+} 
+
+.buttonspan{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }
