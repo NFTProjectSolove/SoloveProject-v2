@@ -24,6 +24,7 @@ function Mint() {
     addressOrName: CONTRACT_ADDRESS,
     contractInterface: abiFile.abi,
   };
+
   const [mintcnt, setMintcnt] = useState(1);
 
   const connectedAccount = '0x9aaB929c32B3CCe2ec0FdBbB21DdD070Fb359fb6';
@@ -72,6 +73,7 @@ function Mint() {
       }
     })();
   }, [tokenURI]);
+
 
   const Counter = () => {
     const mintcntList = [1, 2, 3, 4, 5];
@@ -209,4 +211,6 @@ function Mint() {
   )
 }
 
+
 export default Mint;
+
