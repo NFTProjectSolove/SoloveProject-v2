@@ -1,18 +1,19 @@
 import styled from "styled-components";
 import { NavLink } from 'react-router-dom';    
-import {ConnectButton, darkTheme} from '@rainbow-me/rainbowkit';
+import {ConnectButton} from '@rainbow-me/rainbowkit';
 
 const StyledLink = styled(NavLink)`
   margin: 30px;
   text-decoration-line: none;
 `
 
+
 function Header(){
     return(
       <div id="header">
         <div className="navbar">
           <div className="navbarLogo">
-            <img src="/solovelogo.svg" alt="Logo" style={{height:'30px'}}/>
+            <img src="/solovelogo.svg" alt="Logo" style={{height:'calc(20px + 0.7vw)'}}/>
           </div>
           <div className="navbarMenu">
             <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/'><p>HOME</p></StyledLink>
@@ -29,18 +30,15 @@ function Header(){
                 openAccountModal,
                 openChainModal,
                 openConnectModal,
-                authenticationStatus,
                 mounted,
               }) => {
                 // Note: If your app doesn't use authentication, you
                 // can remove all 'authenticationStatus' checks
-                const ready = mounted && authenticationStatus !== 'loading';
+                const ready = mounted;
                 const connected =
                   ready &&
                   account &&
-                  chain &&
-                  (!authenticationStatus ||
-                    authenticationStatus === 'authenticated');
+                  chain
 
                 return (
                   <div
@@ -49,14 +47,14 @@ function Header(){
                       'style': {
                         opacity: 0,
                         pointerEvents: 'none',
-                        userSelect: 'none',
+                        userSelect: 'none'
                       },
                     })}
                   >
                     {(() => {
                       if (!connected) {
                         return (
-                          <button onClick={openConnectModal} type="button">
+                          <button onClick={openConnectModal} type="button" className="connectButtonHeader">
                             Connect Wallet
                           </button>
                         );
@@ -64,17 +62,17 @@ function Header(){
 
                       if (chain.unsupported) {
                         return (
-                          <button onClick={openChainModal} type="button">
+                          <button onClick={openChainModal} type="button" className="connectButtonHeader">
                             Wrong network
                           </button>
                         );
                       }
 
                       return (
-                        <div style={{ display: 'flex', gap: 12 }}>
+                        <div style={{ display: 'flex', gap: 12}} className="connectButtonHeader">
                           <button
                             onClick={openChainModal}
-                            style={{ display: 'flex', alignItems: 'center' }}
+                            style={{ display: 'flex', alignItems: 'center', color:'white'}}
                             type="button"
                           >
                             {chain.hasIcon && (
@@ -97,14 +95,12 @@ function Header(){
                                 )}
                               </div>
                             )}
-                            {chain.name}
+                            
                           </button>
 
-                          <button onClick={openAccountModal} type="button">
+                          <button onClick={openAccountModal} type="button" >
                             {account.displayName}
-                            {account.displayBalance
-                              ? ` (${account.displayBalance})`
-                              : ''}
+                            
                           </button>
                         </div>
                       );

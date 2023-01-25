@@ -42,7 +42,10 @@ export default function Appa() {
                 ref={contentRef}
                 className={active ? `answer answer-divider` : `answer`}
               >
-                <p>Because I love coding</p>
+                <p>Because I love coding </p>
+                <p>I love coding because conding give me a lot of money</p>
+                <p>So I like web developemnt</p>
+
               </div>
             </div>
 
