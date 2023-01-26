@@ -7,7 +7,6 @@ const StyledLink = styled(NavLink)`
   text-decoration-line: none;
 `
 
-
 function Header(){
     return(
       <div id="header">
@@ -23,7 +22,7 @@ function Header(){
             <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/Mint'><p>MINT</p></StyledLink>
           </div>
           <div>
-          <ConnectButton.Custom>
+            <ConnectButton.Custom>
               {({
                 account,
                 chain,

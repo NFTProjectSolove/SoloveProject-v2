@@ -40,10 +40,10 @@ ReactDOM.render(
     <ChakraProvider>
       <WagmiConfig client={wagmiClient}>
         <RainbowKitProvider chains={chains}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-    </RainbowKitProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </RainbowKitProvider>
       </WagmiConfig>
     </ChakraProvider>
   </React.StrictMode>,

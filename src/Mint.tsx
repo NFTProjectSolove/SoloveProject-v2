@@ -1,11 +1,7 @@
 import {
   Button,
-  Container,
   Text,
-  Image,
-  Box,
   Link,
-  Skeleton,
 } from '@chakra-ui/react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { ethers } from 'ethers';
@@ -13,7 +9,7 @@ import { useEffect, useState } from 'react';
 import { useAccount, useContractRead, useContractWrite } from 'wagmi';
 import abiFile from './Solove.json';
 import { motion } from 'framer-motion';
-console.log(abiFile.abi)
+
 const CONTRACT_ADDRESS = '0x0037AC3738aE7141A2BCCa597005ED21544331b9';
 
 const getOpenSeaURL = (tokenId: string | number) =>
@@ -73,6 +69,12 @@ function Mint() {
     })();
   }, [tokenURI]);
 
+  useEffect(()=>{
+    if(mintError){
+      alert("⛔️ Mint unsuccessful! Error message:" + JSON.stringify(mintError, null, ' ')) 
+    }
+  },[mintError])
+
   const Counter = () => {
     const mintcntList = [1, 2, 3, 4, 5];
     const handleSelect = (e:any) => {
@@ -92,7 +94,7 @@ function Mint() {
         </div>
         <div className="bar"></div>
         <div className="counterInfo2">
-          <span className="label">TOTAL : </span> 
+          <span className="label">TOTAL </span> 
           <span className="num"> {+mintcnt*0.02}</span>
           <span className="unit">eth</span>
         </div>
@@ -102,94 +104,80 @@ function Mint() {
 
   return (
     <div className = "mintwall">
-      <div className="mintcharactor">
-        <img alt="char_solove" src="/mintcharactor.png" ></img>
-      </div>
-
       <div className="mintContainer">
+        <div className="mintcharactor">
+          <img alt="char_solove" src="/mintcharactor.png" ></img>
+        </div>
         <Counter/>
         <div className="buttonContainer">
-          {!isConnected&&<ConnectButton.Custom>
-                  {({
-                    account,
-                    chain,
-                    openAccountModal,
-                    openChainModal,
-                    openConnectModal,
-                    mounted,
-                  }) => {
-                    // Note: If your app doesn't use authentication, you
-                    // can remove all 'authenticationStatus' checks
-                    const ready = mounted;
-                    const connected =
-                      ready &&
-                      account &&
-                      chain
+          {!isConnected&&
+            <ConnectButton.Custom>
+              {({
+                account,
+                chain,
+                openAccountModal,
+                openChainModal,
+                openConnectModal,
+                mounted,
+              }) => {
+                // Note: If your app doesn't use authentication, you
+                // can remove all 'authenticationStatus' checks
+                const ready = mounted;
+                const connected =
+                  ready &&
+                  account &&
+                  chain
 
-                    return (
-                      <div
-                        {...(!ready && {
-                          'aria-hidden': true,
-                          'style': {
-                            opacity: 0,
-                            pointerEvents: 'none',
-                            userSelect: 'none'
-                          },
-                        })}
-                      >
-                        {(() => {
-                          if (!connected) {
-                            return (
-                              <button onClick={openConnectModal} type="button" className="connectButtonMint">
-                                Connect Wallet
-                              </button>
-                            );
-                          }
+                return (
+                  <div
+                    {...(!ready && {
+                      'aria-hidden': true,
+                      'style': {
+                        opacity: 0,
+                        pointerEvents: 'none',
+                        userSelect: 'none',
+                      },
+                    })}
+                  >
+                    {(() => {
+                      if (!connected) {
+                        return (
+                          <button onClick={openConnectModal} type="button" className="connectButtonMint">
+                            Connect Wallet
+                          </button>
+                        );
+                      }
 
-                          if (chain.unsupported) {
-                            return (
-                              <button onClick={openChainModal} type="button" className="connectButtonMint">
-                                Wrong network
-                              </button>
-                            );
-                          }
-                        })()}
-                      </div>
-                    );
-                  }}
-                </ConnectButton.Custom>}
+                      if (chain.unsupported) {
+                        return (
+                          <button onClick={openChainModal} type="button" className="connectButtonMint">
+                            Wrong network
+                          </button>
+                        );
+                      }
+                    })()}
+                  </div>
+                );
+              }}
+            </ConnectButton.Custom>}
           {isConnected &&
             <Button
-            height={'3rem'}
-            width={'10rem'}
+            height={'5vh'}
+            width={'clamp(120px,15vw,250px)'}
+            white-space= {'nowrap'}
             className='mintButton'
             backgroundColor={'#7A7F92'}
             disabled={!isConnected || mintLoading}
             onClick={onMintClick}
-            fontSize={'1.5rem'}
+            fontSize={'clamp(12px,5vw,20px)'}
             font-family='PoppinsLight'
             borderRadius={'20px'}
             _hover={{bg :'#9197ac'}}
-            _active={{
-              transform: 'scale(0.98)',
-            }}
           >Mint Now</Button>}
-          
-        </div>
-        
+        </div>     
       </div>
       
 
-
-      {mintError && (
-        <Text marginTop='4'>⛔️ Mint unsuccessful! Error message:</Text>
-      )}
-
-      {mintError && (
-        <pre style={{ marginTop: '8px', color: 'red' }}>
-          <code>{JSON.stringify(mintError, null, ' ')}</code>
-        </pre>
-      )}
       {mintLoading && <Text marginTop='2'>Minting... please wait</Text>}
 
       {mintedTokenId && (
@@ -205,7 +193,7 @@ function Mint() {
           </Link>
         </Text>
       )}
-  </div>
+    </div>
   )
 }
 
