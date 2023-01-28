@@ -11,10 +11,10 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { ethers } from 'ethers';
 import { useEffect, useState } from 'react';
 import { useAccount, useContractRead, useContractWrite } from 'wagmi';
-import abiFile from './Solove.json';
-import { motion } from 'framer-motion';
-console.log(abiFile.abi)
-const CONTRACT_ADDRESS = '0x0037AC3738aE7141A2BCCa597005ED21544331b9';
+import abiFile from '../contract/Solove.json';
+require('dotenv').config()
+
+const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS;
 
 const getOpenSeaURL = (tokenId: string | number) =>
     `https://testnets.opensea.io/assets/goerli/${CONTRACT_ADDRESS}/${tokenId}`;
