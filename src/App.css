@@ -120,6 +120,7 @@ h2, p{
   width:60%;
   margin:5px 10px;
   min-height: 40vw;
+  display: flex;
 }
 
 .mainContainer{
@@ -158,6 +159,25 @@ h2, p{
 .MuiButton-label{
   font-size: 1.2vw;
 }
+
+#mainImg1{
+  position:relative;
+  padding-top:2vw;
+  padding-left:2vw
+}
+
+#mainImg2{
+  position:relative;
+  padding-top:1vw;
+}
+
+#mainImg3{
+  position:absolute;
+  padding-top:20vw;
+  padding-left: 20vw;
+
+}
+
 
 @media(max-width: 1100px){
 
@@ -204,36 +224,69 @@ h2, p{
   }
 } 
 
-@media(max-width: 480px){
+@media(max-width: 479px){
 
   .bigContainer{
+    position:relative;
     flex-direction: column;
+    align-items: center;
+    width:90%;
+    top: 10vw;
   }
 
   .imgContainer{
-    height: 50vw;
-    padding-top: 6vw;
-    left: 15vw;
+    display: flex;
+    justify-content: center;
+    min-height: none;
+    width:90%;
   }
 
   .textContainer{
-    margin-top: 1vw;
-    width: 50vw;
-    margin-left: 23vw;
+    position: relative;
+    width: 90%;
+    text-align: center;
+    top: 80px;
+    
+  }
+
+  .textContainer img{
+    position:relative;
+    left: 10vw;
+    width: 75%;
   }
 
   .textContainer h1{
-    background: linear-gradient(to right,white 0%,#B2FAFF 38% ,#AA43FF 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 5vw;
+    font-size: 7vw;
     line-height:1.5em;
-    font-family: 'PoppinsSemiBold';
   }
 
   .textContainer p{
-    font-size: 3vw;
+    font-size: 4vw;
+  }
+
+  #mainImg1{
+    padding-top: 7vw;
+    padding-left: 0;
+    
+  }
+  #mainImg1 img{
+    width: 48vw;
+    height: 48vw;
+  }
+
+  #mainImg2 img{
+    width:20vw;
+    height:20vw;
+  }
+  
+  #mainImg3{
+    padding-top:36vw;
+    padding-left: 24vw;
+  }
+
+  #mainImg3 img{
+    width: 28vw;
+    height: 28vw;
   }
 }
 

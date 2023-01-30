@@ -21,10 +21,10 @@ function MainHome(){
     return(
         <div style={{backgroundColor:'black', width:'100vw',height:'100vh', position:'relative', top:'0',overflow:'hidden'}}>
             <div className="bigContainer" style = {{width:'80%', position:'relative',top:'100px', left:'10%', height:'80%', border:'2px solid mediumaquamarine', borderRadius:'30px',display:'flex'}}>
-                <div className="imgContainer" style={{position:'relative', width:'60%', margin:'5px 10px', display:'flex'}}>
-                    <span style={{position:'relative', paddingTop:'2vw', paddingLeft:'2vw'}}><Image alt='soloveimage1' length={30} src={"/Solove1.jpg"}></Image></span>
-                    <span style= {{position:'relative', paddingTop:'1vw'}}><Image alt='soloveimage2' length={11} src={"/Solove3.jpg"}></Image></span>
-                    <span style= {{position:'absolute', paddingTop:'20vw', paddingLeft:'20vw'}}><Image alt='soloveimage3' length={18} src={"/Solove2.gif"}></Image></span>
+                <div className="imgContainer">
+                    <span id="mainImg1"><Image alt='soloveimage1' length={30} src={"/Solove1.jpg"}></Image></span>
+                    <span id="mainImg2"><Image alt='soloveimage2' length={11} src={"/Solove3.jpg"}></Image></span>
+                    <span id="mainImg3"><Image alt='soloveimage3' length={18} src={"/Solove2.gif"}></Image></span>
                 </div>
                 <div className="textContainer">
                     <h1>Welcome to</h1>
