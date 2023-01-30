@@ -137,7 +137,7 @@ h2, p{
 
 .textContainer{
   width:40%;
-  margin-top:calc(5vw - 20px); 
+  margin-top: -1vw;
   padding: 2vw;
 }
 
@@ -222,9 +222,6 @@ h2, p{
     border:1px solid mediumaquamarine; 
     flex-direction: column;
   }
-} 
-
-@media(max-width: 479px){
 
   .bigContainer{
     position:relative;
@@ -238,6 +235,7 @@ h2, p{
     display: flex;
     justify-content: center;
     min-height: none;
+    margin-top: calc(-1.5vw + 20px);
     width:90%;
   }
 
@@ -245,50 +243,49 @@ h2, p{
     position: relative;
     width: 90%;
     text-align: center;
-    top: 80px;
+    top: calc(-7vw + 20px);
     
   }
 
   .textContainer img{
     position:relative;
-    left: 10vw;
-    width: 75%;
+    margin-left: 50%;
+    right: calc(10px + 10vw);
+    width: calc(20px + 20vw);
   }
 
   .textContainer h1{
-    font-size: 7vw;
+    font-size: calc(10px + 3vw);
     line-height:1.5em;
   }
 
   .textContainer p{
-    font-size: 4vw;
+    font-size: calc(10px + 1vw);
   }
 
-  #mainImg1{
-    padding-top: 7vw;
-    padding-left: 0;
-    
-  }
   #mainImg1 img{
-    width: 48vw;
-    height: 48vw;
+    width: calc(30vw + 30px);
+    height: calc(30vw + 30px);
   }
 
   #mainImg2 img{
-    width:20vw;
-    height:20vw;
+    width: calc(11vw + 11px);
+    height:calc(11vw + 11px);
   }
   
-  #mainImg3{
-    padding-top:36vw;
-    padding-left: 24vw;
-  }
 
   #mainImg3 img{
-    width: 28vw;
-    height: 28vw;
+    width: calc(18vw + 10px);
+    height: calc(18vw + 10px);
   }
-}
+
+  #mainImg3{
+    position:absolute;
+    padding-top:calc(20px + 16vw);
+    padding-left: 20vw;
+  
+  }
+} 
 
 /* Mintpage */
 .SoloveMintinfo{
