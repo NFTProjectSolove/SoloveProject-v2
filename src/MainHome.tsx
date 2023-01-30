@@ -10,7 +10,7 @@ background-color: white !important;
 color:black !important;
 `;
 
-const Image = styled.img`
+const Image = styled.img`git remote update
   width: ${(props:ImageTest) => props.length}vw;
   height: ${(props:ImageTest) => props.length}vw;
   border-radius: 50%;
