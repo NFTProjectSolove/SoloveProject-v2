@@ -1,4 +1,3 @@
-import React from 'react';
 import AboutSlider from './AboutSlider';
 
 const itemSize = 200;
