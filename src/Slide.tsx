@@ -1,4 +1,3 @@
-import transitions from '@material-ui/core/styles/transitions';
 import React from 'react';
 import {useState, useEffect, useRef} from 'react';
 import styled from "styled-components";
@@ -44,24 +43,6 @@ height: calc(${itemSize}px + 20vw);
   box-shadow:5px 5px 40px 5px rgba(0,0,0,0.5);
 
 `;
-// 그림위아래에 ㄴ ㄱ 붙이는 css
-// :before{
-//   position:absolute;
-//   color: rgb(170,170,170,0.5);
-//   bottom:-55px;
-//   left: 30px;
-//   font-size:74px;
-//   content:'ㄴ';
-  
-// }
-// :after{
-//   position:absolute;
-//   color: rgb(170,170,170,0.5);
-//   top:-55px;
-//   right: 28px;
-//   font-size:74px;
-//   content: 'ㄱ';
-// }
 
 function Slider(){
     const [currentIndex,SetCurrentIndex] = useState(1);

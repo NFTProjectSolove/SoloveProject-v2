@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Button from '@material-ui/core/Button';
-import {BiChevronRightCircle} from "react-icons/bi";
 
 interface ImageTest{
     length: number;
@@ -20,18 +19,18 @@ const Image = styled.img`
 function MainHome(){
 
     return(
-        <div style={{backgroundColor:'black', width:'100vw',height:'100vh', position:'relative', top:'0'}}>
-            <div style = {{width:'80%', position:'relative',top:'100px', left:'10%', height:'80%', border:'2px solid mediumaquamarine', borderRadius:'30px',display:'flex'}}>
-                <div className="imgContainer" style={{position:'relative', width:'60%', margin:'5px 10px'}}>
-                    <span style={{position:'absolute',left:'5%', top:'8%'}}><Image alt='soloveimage1' length={30} src={"/Solove1.jpg"}></Image></span>
-                    <span style= {{position:'absolute', right:'8%', top:'5%'}}><Image alt='soloveimage2' length={11} src={"/Solove3.jpg"}></Image></span>
-                    <span style= {{position:'absolute', right:'10%', bottom:'2%'}}><Image alt='soloveimage3' length={18} src={"/Solove2.gif"}></Image></span>
+        <div style={{backgroundColor:'black', width:'100vw',height:'100vh', position:'relative', top:'0',overflow:'hidden'}}>
+            <div className="bigContainer" style = {{width:'80%', position:'relative',top:'100px', left:'10%', height:'80%', border:'2px solid mediumaquamarine', borderRadius:'30px',display:'flex'}}>
+                <div className="imgContainer" style={{position:'relative', width:'60%', margin:'5px 10px', display:'flex'}}>
+                    <span className="maincircle1" style={{position:'relative', paddingTop:'2vw', paddingLeft:'2vw'}}><Image alt='soloveimage1' length={30} src={"/Solove1.jpg"}></Image></span>
+                    <span className="maincircle2" style= {{position:'relative', paddingTop:'1vw'}}><Image alt='soloveimage2' length={11} src={"/Solove3.jpg"}></Image></span>
+                    <span className="maincircle3" style= {{position:'absolute', paddingTop:'20vw', paddingLeft:'20vw'}}><Image alt='soloveimage3' length={18} src={"/Solove2.gif"}></Image></span>
                 </div>
                 <div className="textContainer">
-                    <h1>Welcome to </h1>
-                    <img src="/solovewhite.png" alt="Solove" width="320px"></img>
-                    <p>Solove Supports all the loves in the world.<br/>Join our world and create a new relationship</p>
-                    <StyledButton type="submit" formTarget='_blank' href="https://opensea.io">Click to shop<BiChevronRightCircle/></StyledButton>
+                    <h1>Welcome to</h1>
+                    <img src="/solovewhite.png" alt="Solove" width='60%'></img>
+                    <p>Solove Supports all the loves in the world. Join our world and create a new relationship.</p>
+                    <StyledButton style= {{marginTop:'1vw', padding:'0.2vw 1vw 0.2vw 1vw'}} type="submit" formTarget='_blank' href="https://opensea.io">Click to shop ➠</StyledButton>
                 </div>
             </div>
         </div>
