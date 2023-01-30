@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import Button from '@material-ui/core/Button';
-import {BiChevronRightCircle} from "react-icons/bi";
+import Button from '@material-ui/core/Button';  
 
 interface ImageTest{
     length: number;
