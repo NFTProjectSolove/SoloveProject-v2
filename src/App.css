@@ -287,6 +287,84 @@ h2, p{
   }
 } 
 
+@media(max-width: 480px){
+  
+    .bigContainer{
+      position:relative;
+      flex-direction: column;
+      align-items: center;
+      width:90%;
+      top: 10vw;
+    }
+  
+    .imgContainer{
+      height: 50vw;
+      padding-top: 6vw;
+      display: flex;
+      justify-content: center;
+      min-height: none;
+      width:90%;
+    }
+  
+    .textContainer{
+      margin-top: 1vw;
+      width: 50vw;
+      position: relative;
+      width: 90%;
+      text-align: center;
+      top: 80px;
+  
+    }
+  
+    .textContainer img{
+      position:relative;
+      width: 75%;
+      margin-left: 32%;
+    }
+  
+    .textContainer h1{
+      background: linear-gradient(to right,white 0%,#B2FAFF 38% ,#AA43FF 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 5vw;
+      font-size: 7vw;
+      line-height:1.5em;
+      font-family: 'PoppinsSemiBold';
+    }
+  
+    .textContainer p{
+      font-size: 3vw;
+      font-size: 4vw;
+    }
+  
+    #mainImg1{
+      padding-top: 7vw;
+      padding-left: 0;
+  
+    }
+    #mainImg1 img{
+      width: 48vw;
+      height: 48vw;
+    }
+  
+    #mainImg2 img{
+      width:20vw;
+      height:20vw;
+    }
+  
+    #mainImg3{
+      padding-top:36vw;
+      padding-left: 24vw;
+    }
+  
+    #mainImg3 img{
+      width: 28vw;
+      height: 28vw;
+    }
+  }
+
+  
 /* Mintpage */
 .SoloveMintinfo{
   font-size: 32px;
