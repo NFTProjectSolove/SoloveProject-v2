@@ -90,7 +90,7 @@ function Mint() {
             <select className="select" onChange={handleSelect} value={mintcnt}> 
               {mintcntList.map((item) => (
               <option value={item} key={item}> {item}</option>))}
-              </select>
+            </select>
           </span>
         </div>
         <div className="bar"></div>
@@ -104,96 +104,98 @@ function Mint() {
   };
 
   return (
-    <div className = "mintwall">
-      <div className="mintContainer">
-        <div className="mintcharactor">
-          <img alt="char_solove" src="/mintcharactor.png" ></img>
+    <div className="tranPage">
+      <div className = "mintwall">
+        <div className="mintContainer">
+          <div className="mintcharactor">
+            <img alt="char_solove" src="/mintcharactor.png" ></img>
+          </div>
+          <Counter/>
+          <div className="buttonContainer">
+            {!isConnected&&
+              <ConnectButton.Custom>
+                {({
+                  account,
+                  chain,
+                  openAccountModal,
+                  openChainModal,
+                  openConnectModal,
+                  mounted,
+                }) => {
+                  // Note: If your app doesn't use authentication, you
+                  // can remove all 'authenticationStatus' checks
+                  const ready = mounted;
+                  const connected =
+                    ready &&
+                    account &&
+                    chain
+
+                  return (
+                    <div
+                      {...(!ready && {
+                        'aria-hidden': true,
+                        'style': {
+                          opacity: 0,
+                          pointerEvents: 'none',
+                          userSelect: 'none',
+                        },
+                      })}
+                    >
+                      {(() => {
+                        if (!connected) {
+                          return (
+                            <button onClick={openConnectModal} type="button" className="connectButtonMint">
+                              Connect Wallet
+                            </button>
+                          );
+                        }
+
+                        if (chain.unsupported) {
+                          return (
+                            <button onClick={openChainModal} type="button" className="connectButtonMint">
+                              Wrong network
+                            </button>
+                          );
+                        }
+                      })()}
+                    </div>
+                  );
+                }}
+              </ConnectButton.Custom>}
+            {isConnected &&
+              <Button
+              height={'5vh'}
+              width={'clamp(120px,15vw,250px)'}
+              white-space= {'nowrap'}
+              className='mintButton'
+              backgroundColor={'#7A7F92'}
+              disabled={!isConnected || mintLoading}
+              onClick={onMintClick}
+              fontSize={'clamp(12px,5vw,20px)'}
+              font-family='PoppinsLight'
+              borderRadius={'20px'}
+              _hover={{bg :'#9197ac'}}
+            >Mint Now</Button>}
+          </div>     
         </div>
-        <Counter/>
-        <div className="buttonContainer">
-          {!isConnected&&
-            <ConnectButton.Custom>
-              {({
-                account,
-                chain,
-                openAccountModal,
-                openChainModal,
-                openConnectModal,
-                mounted,
-              }) => {
-                // Note: If your app doesn't use authentication, you
-                // can remove all 'authenticationStatus' checks
-                const ready = mounted;
-                const connected =
-                  ready &&
-                  account &&
-                  chain
+        
 
-                return (
-                  <div
-                    {...(!ready && {
-                      'aria-hidden': true,
-                      'style': {
-                        opacity: 0,
-                        pointerEvents: 'none',
-                        userSelect: 'none',
-                      },
-                    })}
-                  >
-                    {(() => {
-                      if (!connected) {
-                        return (
-                          <button onClick={openConnectModal} type="button" className="connectButtonMint">
-                            Connect Wallet
-                          </button>
-                        );
-                      }
+        {mintLoading && <Text marginTop='2'>Minting... please wait</Text>}
 
-                      if (chain.unsupported) {
-                        return (
-                          <button onClick={openChainModal} type="button" className="connectButtonMint">
-                            Wrong network
-                          </button>
-                        );
-                      }
-                    })()}
-                  </div>
-                );
-              }}
-            </ConnectButton.Custom>}
-          {isConnected &&
-            <Button
-            height={'5vh'}
-            width={'clamp(120px,15vw,250px)'}
-            white-space= {'nowrap'}
-            className='mintButton'
-            backgroundColor={'#7A7F92'}
-            disabled={!isConnected || mintLoading}
-            onClick={onMintClick}
-            fontSize={'clamp(12px,5vw,20px)'}
-            font-family='PoppinsLight'
-            borderRadius={'20px'}
-            _hover={{bg :'#9197ac'}}
-          >Mint Now</Button>}
-        </div>     
+        {mintedTokenId && (
+          <Text marginTop='2'>
+            🥳 Mint successful! You can view your NFT{' '}
+            <Link
+              isExternal
+              href={getOpenSeaURL(mintedTokenId)}
+              color='blue'
+              textDecoration='underline'
+            >
+              here!
+            </Link>
+          </Text>
+        )}
       </div>
-      
-
-      {mintLoading && <Text marginTop='2'>Minting... please wait</Text>}
-
-      {mintedTokenId && (
-        <Text marginTop='2'>
-          🥳 Mint successful! You can view your NFT{' '}
-          <Link
-            isExternal
-            href={getOpenSeaURL(mintedTokenId)}
-            color='blue'
-            textDecoration='underline'
-          >
-            here!
-          </Link>
-        </Text>
-      )}
     </div>
   )
 }
