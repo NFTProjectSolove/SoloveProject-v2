@@ -164,11 +164,45 @@ h2, p{
 @media(max-width: 1023px){
   .connectButtonHeader{
     font-size: 2vw;
+    
+  }
+
+  .navbarLogo{
+    margin-left:calc(20px + 4vw);
+  }
+  
+  .navbarMenu{
+    font-size: 2vw;
+  }
+
+  .navbarMenu a{
+    margin: 12px;
+    margin-top: 15px;
+    margin-left: 0.8vw;
   }
 }
+
 @media(max-width: 767px){
   .connectButtonHeader{
     display: none;
+  }
+  .navbarLogo{
+    margin-top: 0;
+    margin-left: 4vw;
+  }
+
+  #header{
+    border: 1px solid mediumaquamarine;
+  }
+  .navbarMenu{
+    font-size: calc(0.8px + 1.9vw);
+    margin-right: 5px;
+  }
+
+  .navbarMenu a{
+    margin: 0;
+    margin-top: 0.6vw;
+    margin-left: 1.3vw;
   }
 }
 
@@ -187,8 +221,6 @@ h2, p{
   top:100px;
   left:10%;
   height:80%;
-  border:2px solid mediumaquamarine; 
-  border-radius:30px;
   display: flex;
   flex-wrap: nowrap;
 }
@@ -212,6 +244,7 @@ h2, p{
 .textContainer p{
   margin-top:3vw;
   font-size: 1.5vw;
+  font-family: 'Inconsolata', Consolas, monospace;
 }
 
 #mainImg1{
@@ -232,48 +265,7 @@ h2, p{
 
 }
 
-@media(max-width: 1023px){
-  .navbarLogo{
-    margin-left:calc(20px + 4vw);
-  }
-  
-  .navbarMenu{
-    font-size: 2vw;
-  }
-
-  .navbarMenu a{
-    margin: 12px;
-    margin-top: 15px;
-    margin-left: 0.8vw;
-  }
-}
-
 @media(max-width: 767px){
-  .SlideButtonPrev{
-    left: calc(200px - 17.2vw);
-  }
-  .SlideButtonNext{
-    left: calc(-200px + 17.2vw);
-  }
-
-  .navbarLogo{
-    margin-top: 0;
-    margin-left: 4vw;
-  }
-
-  #header{
-    border: 1px solid mediumaquamarine;
-  }
-  .navbarMenu{
-    font-size: calc(0.8px + 1.9vw);
-    margin-right: 5px;
-  }
-
-  .navbarMenu a{
-    margin: 0;
-    margin-top: 0.6vw;
-    margin-left: 1.3vw;
-  }
   .mainContainer{
     border:1px solid mediumaquamarine; 
     flex-direction: column;
@@ -814,6 +806,14 @@ h2, p{
     margin-left: 15px;
     font-weight: lighter;
   }
+
+  .SlideButtonPrev{
+    left: calc(200px - 17.2vw);
+  }
+  .SlideButtonNext{
+    left: calc(-200px + 17.2vw);
+  }
+
 }
 
 @media screen and (max-width:479px) {
@@ -1047,6 +1047,7 @@ h2, p{
   .select option{
     font-size: 12px;
   }
+  
   .unit{
     font-size: 14px;
     font-weight: bold;
