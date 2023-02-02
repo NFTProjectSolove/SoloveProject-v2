@@ -777,24 +777,11 @@ h2, p{
 {.connectButtonHeader{font-size: 2vw;}
 
 .Roadmapwall {
-  width: 100vw;
-  height: 40vh;
-  align-items: center;
-  background-image: url(./img/roadmapwall.png);
-  background-size : contain;
-  background-color: black;
-  position:'absolute';
-  background-repeat: no-repeat;
-  overflow: hidden;
+  height: 80vh;
   padding-top: 17vw;
-  right : 0%;
 }
 .slideText-wrap2{
-  width: 100vw;
-  height: 40vh;
-  border-radius: 1000px 1000px 0px 0px;
-  position: relative;
-  overflow: hidden;
+  height: 80vh;
 }
 
 
@@ -873,25 +860,11 @@ h2, p{
   }
 
   .Roadmapwall {
-    width: 100vw;
-    height: 50vh;
-    align-items: center;
-    background-image: url(./img/roadmapwall.png);
-    background-size : contain;
-    background-color: black;
-    position:'absolute';
-    background-repeat: no-repeat;
-    overflow: hidden;
-    padding-top: 17vw;
-    right : 0%;
+    height: 80vh;
   }
   
   .slideText-wrap2{
-    width: 100vw;
-    height: 50vh;
-    border-radius: 1000px 1000px 0px 0px;
-    position: relative;
-    overflow: hidden;
+    height: 80vh;
   }
   
 
@@ -929,25 +902,11 @@ h2, p{
   }
 
   .Roadmapwall {
-    width: 100vw;
-    height: 40vh;
-    align-items: center;
-    background-image: url(./img/roadmapwall.png);
-    background-size : contain;
-    background-color: black;
-    position:'absolute';
-    background-repeat: no-repeat;
-    overflow: hidden;
-    padding-top: 17vw;
-    right : 0%;
+    height: 60vh;
   }
   
   .slideText-wrap2{
-    width: 100vw;
-    height: 40vh;
-    border-radius: 1000px 1000px 0px 0px;
-    position: relative;
-    overflow: hidden;
+    height: 80vh;
   }
 }
 
@@ -1008,24 +967,10 @@ h2, p{
   }
 
   .Roadmapwall {
-    width: 100vw;
     height: 30vh;
-    align-items: center;
-    background-image: url(./img/roadmapwall.png);
-    background-size : contain;
-    background-color: black;
-    position:'absolute';
-    background-repeat: no-repeat;
-    overflow: hidden;
-    padding-top: 17vw;
-    right : 0%;
   }
   
   .slideText-wrap2{
-    width: 100vw;
-    height: 30vh;
-    border-radius: 1000px 1000px 0px 0px;
-    position: relative;
-    overflow: hidden;
+    height: 50vh;
   }
 }
