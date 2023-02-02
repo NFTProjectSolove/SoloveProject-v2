@@ -12,7 +12,7 @@ const App = () => {
     const location = useLocation();
 
 return (
-    <>
+    <div style={{backgroundColor:'black'}}>
         <Header/>
         <TransitionGroup className="transitionWrapper"> 
             <CSSTransition
@@ -29,7 +29,7 @@ return (
                 </Routes>
             </CSSTransition>
         </TransitionGroup>
-    </>
+    </div>
 );
 };
 
