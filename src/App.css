@@ -43,61 +43,6 @@ body::-webkit-scrollbar{
   display:none;
 }
 
-/* Page Transition */
-.transitions-wrapper {
-  position: relative;
-  overflow: hidden;
-  height: calc(var(--vh, 1vh) * 100);
-  width: 100vw;
-}
-.right-enter {
-  /* z-index: 0; */
-  transform: translateX(100%);
-}
-
-.right-enter-active {
-  /* z-index: 1; */
-  transform: translateX(0);
-  transition: transform 300ms ease-in-out;
-  /* transition-timing-function: ease-in-out; */
-}
-
-.right-exit {
-  /* z-index: 1; */
-  transform: translateX(0);
-}
-
-.right-exit-active {
-  /* z-index: 0; */
-  transform: translateX(-100%);
-  transition: transform 300ms ease-in-out;
-  /* transition-timing-function: ease-in-out; */
-}
-
-.left-enter {
-  /* z-index: 0; */
-  transform: translateX(-100%);
-}
-
-.left-enter-active {
-  /* z-index: 1; */
-  transform: translateX(0);
-  transition: transform 300ms ease-in-out;
-  /* transition-timing-function: ease-in-out; */
-}
-
-.left-exit {
-  /* z-index: 1; */
-  transform: translateX(0);
-}
-
-.left-exit-active {
-  /* z-index: 0; */
-  transform: translateX(100%);
-  transition: transform 300ms ease-in-out;
-  /* transition-timing-function: ease-in-out; */
-}
-
 .bigWrap{
   overflow: hidden;
   width: 100vw;
@@ -122,6 +67,45 @@ h2, p{
   font-size: var(--font-size-sm);
   transition: all 0.3s ease;
 }
+
+/* Page Transition */
+.transitionsWrapper {
+  position: relative;
+  overflow: hidden;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100vw;
+}
+
+.transitionCSS-enter{
+  animation: 0.4s ease load forwards;
+}
+
+.transitionCSS-exit{
+  animation: 0.4s ease unload forwards;
+}
+
+@keyframes load{
+  0%{
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0px)
+  }
+}
+
+@keyframes unload{
+  0%{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(30px)
+  }
+}
+
 /*Heder */
 
 .active p{
@@ -168,6 +152,25 @@ h2, p{
   margin: 22px 1vw;
 }
 
+.connectButtonHeader{
+  color: white;
+  border: 2px solid mediumaquamarine;
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 21px;
+}
+
+
+@media(max-width: 1023px){
+  .connectButtonHeader{
+    font-size: 2vw;
+  }
+}
+@media(max-width: 767px){
+  .connectButtonHeader{
+    display: none;
+  }
+}
 
 /*MainHome */
 .imgContainer{
@@ -211,10 +214,6 @@ h2, p{
   font-size: 1.5vw;
 }
 
-.MuiButton-label{
-  font-size: 1.2vw;
-}
-
 #mainImg1{
   position:relative;
   padding-top:2vw;
@@ -233,9 +232,7 @@ h2, p{
 
 }
 
-
-@media(max-width: 1100px){
-
+@media(max-width: 1023px){
   .navbarLogo{
     margin-left:calc(20px + 4vw);
   }
@@ -251,9 +248,13 @@ h2, p{
   }
 }
 
-@media(max-width: 800px){
-  .SlideButtonPrev{left: calc(200px - 17.2vw);}
-  .SlideButtonNext{left: calc(-200px + 17.2vw);}
+@media(max-width: 767px){
+  .SlideButtonPrev{
+    left: calc(200px - 17.2vw);
+  }
+  .SlideButtonNext{
+    left: calc(-200px + 17.2vw);
+  }
 
   .navbarLogo{
     margin-top: 0;
@@ -327,7 +328,6 @@ h2, p{
     width: calc(11vw + 11px);
     height:calc(11vw + 11px);
   }
-  
 
   #mainImg3 img{
     width: calc(18vw + 10px);
@@ -342,8 +342,7 @@ h2, p{
   }
 } 
 
-@media(max-width: 480px){
-  
+@media(max-width: 479px){
     .bigContainer{
       position:relative;
       flex-direction: column;
@@ -420,78 +419,6 @@ h2, p{
   }
 
   
-/* Mintpage */
-.SoloveMintinfo{
-  font-size: 32px;
-}
-
-.btn_info{
-  padding-top: 10px;
-  position: relative; 
-}
-
-.counterInfo1{
-  display: flex;
-  -webkit-box-pack: justify;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px; 
-}
-
-.counterInfo1 .unit{
-  margin-right: 180px;
-}
-
-.counterInfo2{
-  width: 100%;
-  display: flex;
-  flex-flow: nowrap;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-}
-
-.counterInfo2 .num{
-  margin-left: 220px;
-}
-
-.bar{
-  height: 0.5px;
-  width: 100%;
-  background-color: white;
-  margin-bottom: 15px;
-}
-
-.label{
-  font-size: 20px; 
-}
-
-.unit{
-    font-size: 26px;
-    font-weight: bold;
-    margin-left: 5px;
-    line-height: 50px;
-}
-.num{
-  position: relative;
-  bottom: 15px;
-  font-size: 60px;
-}
-.select{
-  border-color: rgb(255, 255, 255);
-    background: white;
-    border-radius: 6px;
-    width: 100px;
-    height: 40px;
-    text-align: center;
-    text-align-last: center;
-    font-size: 16px;
-    color: black;
-    padding-right: 14px;
-    padding-left: 14px;
-    appearance: none;
-}
-
 
 /* Roadmap CSS ▽ */
 
@@ -650,10 +577,6 @@ h2, p{
   }
 }
 
-
-
-
-
 .storytitleContainer{
   width: 100vw;
   height: auto;
@@ -676,7 +599,7 @@ h2, p{
   cursor: pointer;
   width: 100vw;
   background-color: #ffffff;
-   background-image: linear-gradient(
+  background-image: linear-gradient(
         45deg,
         rgb(255, 255, 255) 16.666%, 
         rgb(215, 209, 223) 16.666%, 
@@ -698,7 +621,6 @@ h2, p{
   animation-timing-function: linear;
   margin-bottom: 5vh;
 }
-
 
 @keyframes rainbow-text-simple-animation-rev {
     0% {
@@ -741,23 +663,42 @@ h2, p{
   margin-bottom: 1vw;
 }
 
-
-
 @keyframes typing {
   from{ width: 0;}
 }
 
+@media screen and (max-width:1100px){
+  .Roadmapwall {
+    height: 80vh;
+    padding-top: 17vw;
+  }
+  .slideText-wrap2{
+    height: 80vh;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .Roadmapwall {
+    height: 40vh;
+  }
+  
+  .slideText-wrap2{
+    height: 40vh;
+  }
+}
+
+@media screen and (max-width:479px) {
+  .Roadmapwall {
+    height: 30vh;
+  }
+  
+  .slideText-wrap2{
+    height: 30vh;
+  }
+}
 
 
-
-
-
-
-
-
-/* Roadmap CSS end */
-
-/* FAQ CSS start*/
+/* FAQ CSS*/
 
 .FAQtext {
   font-size: 50px;
@@ -831,6 +772,69 @@ h2, p{
 .Appa p{
   color: rgb(255, 255, 255);
   font-size: 15px;
+}
+
+@media screen and (max-width:1023px) {
+  .FAQtext {
+    font-size: 40px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5vh;
+  }
+
+  .Appa p{
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+  }
+  
+  .question-align h4 {
+    font-size: 20px;
+    margin-left: 15px;
+    font-weight: lighter;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .FAQtext {
+    font-size: 45px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 3vh;
+  }
+
+  .Appa p{
+    color: rgb(255, 255, 255);
+    font-size: 10px;
+  }
+  
+  .question-align h4 {
+    font-size: 17px;
+    margin-left: 15px;
+    font-weight: lighter;
+  }
+}
+
+@media screen and (max-width:479px) {
+  .FAQtext {
+    font-size: 40px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1vh;
+  }
+
+  .Appa p{
+    color: rgb(255, 255, 255);
+    font-size: 10px;
+  }
+  
+  .question-align h4 {
+    font-size: 15px;
+    margin-left: 15px;
+    font-weight: lighter;
+  }
 }
 
 /* mint page css */
@@ -948,42 +952,6 @@ h2, p{
   align-items: center;  
 }
 
-.connectButtonHeader{
-  color: white;
-  border: 2px solid mediumaquamarine;
-  border-radius: 20px;
-  padding: 3px 10px;
-  font-size: 21px;
-}
-
-@media(max-width: 1100px)
-{.connectButtonHeader{font-size: 2vw;}
-
-.Roadmapwall {
-  width: 100vw;
-  height: 40vh;
-  align-items: center;
-  background-image: url(./img/roadmapwall.png);
-  background-size : contain;
-  background-color: black;
-  position:'absolute';
-  background-repeat: no-repeat;
-  overflow: hidden;
-  padding-top: 17vw;
-  right : 0%;
-}
-.slideText-wrap2{
-  width: 100vw;
-  height: 40vh;
-  border-radius: 1000px 1000px 0px 0px;
-  position: relative;
-  overflow: hidden;
-}
-
-
-}
-@media(max-width: 800px){.connectButtonHeader{display: none;}}
-
 .connectButtonMint{
   color: white;
   background-color: #7A7F92;
@@ -1035,49 +1003,6 @@ h2, p{
     bottom: 0;
     font-size: 44px;
   }
-
-  .FAQtext {
-    font-size: 40px;
-    color: #ffffff;
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 5vh;
-  }
-
-  .Appa p{
-    color: rgb(255, 255, 255);
-    font-size: 12px;
-  }
-  
-  .question-align h4 {
-    font-size: 20px;
-    margin-left: 15px;
-    font-weight: lighter;
-  }
-
-  .Roadmapwall {
-    width: 100vw;
-    height: 50vh;
-    align-items: center;
-    background-image: url(./img/roadmapwall.png);
-    background-size : contain;
-    background-color: black;
-    position:'absolute';
-    background-repeat: no-repeat;
-    overflow: hidden;
-    padding-top: 17vw;
-    right : 0%;
-  }
-  
-  .slideText-wrap2{
-    width: 100vw;
-    height: 50vh;
-    border-radius: 1000px 1000px 0px 0px;
-    position: relative;
-    overflow: hidden;
-  }
-  
-
 }
 
 @media screen and (max-width:767px) {
@@ -1094,47 +1019,6 @@ h2, p{
 
   .select{
     padding: 0;
-  }
-
-  .FAQtext {
-    font-size: 45px;
-    color: #ffffff;
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 3vh;
-  }
-
-  .Appa p{
-    color: rgb(255, 255, 255);
-    font-size: 10px;
-  }
-  
-  .question-align h4 {
-    font-size: 17px;
-    margin-left: 15px;
-    font-weight: lighter;
-  }
-
-  .Roadmapwall {
-    width: 100vw;
-    height: 40vh;
-    align-items: center;
-    background-image: url(./img/roadmapwall.png);
-    background-size : contain;
-    background-color: black;
-    position:'absolute';
-    background-repeat: no-repeat;
-    overflow: hidden;
-    padding-top: 17vw;
-    right : 0%;
-  }
-  
-  .slideText-wrap2{
-    width: 100vw;
-    height: 40vh;
-    border-radius: 1000px 1000px 0px 0px;
-    position: relative;
-    overflow: hidden;
   }
 }
 
@@ -1177,46 +1061,5 @@ h2, p{
     width: clamp(150px,15vw,500px);
     padding: 3px 10px;
     font-size: 10px;
-  }
-
-  .FAQtext {
-    font-size: 40px;
-    color: #ffffff;
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 1vh;
-  }
-
-  .Appa p{
-    color: rgb(255, 255, 255);
-    font-size: 10px;
-  }
-  
-  .question-align h4 {
-    font-size: 15px;
-    margin-left: 15px;
-    font-weight: lighter;
-  }
-
-  .Roadmapwall {
-    width: 100vw;
-    height: 30vh;
-    align-items: center;
-    background-image: url(./img/roadmapwall.png);
-    background-size : contain;
-    background-color: black;
-    position:'absolute';
-    background-repeat: no-repeat;
-    overflow: hidden;
-    padding-top: 17vw;
-    right : 0%;
-  }
-  
-  .slideText-wrap2{
-    width: 100vw;
-    height: 30vh;
-    border-radius: 1000px 1000px 0px 0px;
-    position: relative;
-    overflow: hidden;
   }
 }
