@@ -5,21 +5,19 @@ import About from "./About";
 import Roadmap from "./Roadmap";
 import Faq from "./Faq";
 import Header from "./Header";
-import {useState} from 'react';
 import { Route, Routes, useLocation} from "react-router";
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const App = () => {
     const location = useLocation();
-    const [slideDirection, setSlideDirection] = useState<string>('left');    
 
 return (
     <>
         <Header/>
-        <TransitionGroup className="transition-wrapper"> 
+        <TransitionGroup className="transitionWrapper"> 
             <CSSTransition
                 key={location.pathname}
-                classNames={slideDirection}
+                classNames="transitionCSS"
                 timeout={300}
                 >
                 <Routes location={location}> 
