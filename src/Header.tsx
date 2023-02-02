@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { NavLink } from 'react-router-dom';    
 import {ConnectButton} from '@rainbow-me/rainbowkit';
 
+
 const StyledLink = styled(NavLink)`
   margin: 30px;
   text-decoration-line: none;

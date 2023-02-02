@@ -97,13 +97,13 @@ function Roadmap(){
     }
 
     return(
-      <>
+      <div className="tranPage">
         <div className = 'Roadmapwall'>
           <Scrolldown></Scrolldown>
           <Slogun></Slogun>
         </div>
         <Roadmap></Roadmap>
-      </>
+      </div>
         
     )
 };
