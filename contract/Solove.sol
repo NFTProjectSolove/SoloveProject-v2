@@ -30,7 +30,7 @@ contract SimpleNftLowerGas is ERC721, Ownable {
     // For operation
     bool public paused = false;
     bool public revealed = false;
-
+    bool public public_mint = false;
 
     constructor(
         string memory _name,
@@ -55,7 +55,7 @@ contract SimpleNftLowerGas is ERC721, Ownable {
         return supply.current();
     }
 
-    function mint(uint256 _mintAmount, bytes32[] calldata _merkleProof) public payable mintCompliance(_mintAmount) {
+    function whitelistmint(uint256 _mintAmount, bytes32[] calldata _merkleProof) public payable mintCompliance(_mintAmount) {
         require(!paused, "The contract is paused!");
         require(msg.value >= cost * _mintAmount, "Insufficient funds!");
 
@@ -66,6 +66,17 @@ contract SimpleNftLowerGas is ERC721, Ownable {
         );
         whitelistClaimed[msg.sender] = true;
         //
+
+        for (uint256 i = 0; i < _mintAmount; i++) {
+            supply.increment();
+            _mint(msg.sender, supply.current());
+        }
+    }
+
+    function publicmint(uint256 _mintAmount) public payable mintCompliance(_mintAmount) {
+        require(!paused, "The contract is paused!");
+        require(public_mint, "Not Public Minting period");
+        require(msg.value >= cost * _mintAmount, "Insufficient funds!");
 
         for (uint256 i = 0; i < _mintAmount; i++) {
             supply.increment();
