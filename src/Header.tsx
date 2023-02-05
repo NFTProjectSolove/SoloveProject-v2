@@ -69,7 +69,7 @@ function Header(){
                       }
 
                       return (
-                        <div style={{ display: 'flex', gap: 12}} className="connectButtonHeader">
+                        <div style={{gap: 12}} className="connectButtonHeader">
                           <button
                             onClick={openChainModal}
                             style={{ display: 'flex', alignItems: 'center', color:'white'}}

@@ -7,13 +7,11 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { ethers } from 'ethers';
 import { useEffect, useState } from 'react';
 import { useAccount, useContractRead, useContractWrite } from 'wagmi';
+import Swal from 'sweetalert2';
 import abiFile from './Solove.json';
-import { motion } from 'framer-motion';
+
 
 const CONTRACT_ADDRESS = '0x0037AC3738aE7141A2BCCa597005ED21544331b9';
-
-const getOpenSeaURL = (tokenId: string | number) =>
-    `https://testnets.opensea.io/assets/goerli/${CONTRACT_ADDRESS}/${tokenId}`;
 
 function Mint() {
   const contractConfig = {
@@ -23,14 +21,8 @@ function Mint() {
 
   const [mintcnt, setMintcnt] = useState(1);
 
-  const connectedAccount = '0x9aaB929c32B3CCe2ec0FdBbB21DdD070Fb359fb6';
+  const connectedAccount = '0x15979297a8B1a4e52294c9E21D5423EddB5Da5C4';
   const amount = ethers.utils.parseEther('0.001');
-
-  const { data: tokenURI } = useContractRead({
-    ...contractConfig,
-    functionName: 'commonTokenURI',
-  });
-  const [imgURL, setImgURL] = useState('');
 
   const { writeAsync: mint, error: mintError } = useContractWrite({
     ...contractConfig,
@@ -43,7 +35,7 @@ function Mint() {
   const [mintLoading, setMintLoading] = useState(false);
   const { address } = useAccount();
   const isConnected = !!address;
-  const [mintedTokenId, setMintedTokenId] = useState<number>();
+  const [mintedTokenId, setMintedTokenId] = useState<string|number>(0);
 
   const onMintClick = async () => {
     try {
@@ -61,20 +53,32 @@ function Mint() {
     }
   };
 
-  useEffect(() => {
-    (async () => {
-      if (tokenURI) {
-        const res = await (await fetch(tokenURI as unknown as string)).json();
-        setImgURL(res.image);
-      }
-    })();
-  }, [tokenURI]);
-
   useEffect(()=>{
     if(mintError){
-      alert("⛔️ Mint unsuccessful! Error message:" + JSON.stringify(mintError, null, ' ')) 
+      console.log(mintError)
+      Swal.fire({
+        html: JSON.stringify(mintError,null,' '),
+        icon:"error",
+      })
     }
-  },[mintError])
+    if(mintedTokenId){
+      Swal.fire(
+      {
+        html: 'Mint successful! You can view your NFT\n  <a target="_blank" href="https://testnets.opensea.io/assets/goerli/${CONTRACT_ADDRESS}/${tokenId}"><p style="color:green">Click me!</p></a>',
+        icon:'success',
+      });
+    }
+    if(mintLoading){
+      Swal.fire({
+        text: 'Minting.. please wait ',
+        icon: 'info',
+        toast: true,
+        timerProgressBar: true,
+        timer:10000,
+        showCloseButton:false
+      })
+    }
+  },[mintError, mintedTokenId, mintLoading])
 
   const Counter = () => {
     const mintcntList = [1, 2, 3, 4, 5];
@@ -178,23 +182,6 @@ function Mint() {
             >Mint Now</Button>}
           </div>     
         </div>
-        
-
-        {mintLoading && <Text marginTop='2'>Minting... please wait</Text>}
-
-        {mintedTokenId && (
-          <Text marginTop='2'>
-            🥳 Mint successful! You can view your NFT{' '}
-            <Link
-              isExternal
-              href={getOpenSeaURL(mintedTokenId)}
-              color='blue'
-              textDecoration='underline'
-            >
-              here!
-            </Link>
-          </Text>
-        )}
       </div>
     </div>
   )

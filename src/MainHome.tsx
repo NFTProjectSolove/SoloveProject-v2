@@ -21,7 +21,7 @@ function MainHome(){
     return(
         <div className="tranPage">
             <div style={{backgroundColor:'black', width:'100vw',height:'100vh', position:'relative', top:'0',overflow:'hidden'}}>
-                <div className="bigContainer" style = {{width:'80%', position:'relative',top:'100px', left:'10%', height:'80%', border:'2px solid mediumaquamarine',display:'flex'}} >
+                <div className="bigContainer" style = {{width:'80%', position:'relative',top:'100px', left:'10%', height:'80%', border:'2px solid mediumaquamarine',display:'flex', borderRadius:"30px"}} >
                     <div className="imgContainer">
                         <span id="mainImg1"><Image alt='soloveimage1' length={30} src={"/Solove1.jpg"}></Image></span>
                         <span id="mainImg2"><Image alt='soloveimage2' length={11} src={"/Solove3.jpg"}></Image></span>

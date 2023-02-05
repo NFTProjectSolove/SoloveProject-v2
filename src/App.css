@@ -153,6 +153,7 @@ h2, p{
 }
 
 .connectButtonHeader{
+  display:flex;
   color: white;
   border: 2px solid mediumaquamarine;
   border-radius: 20px;
@@ -183,9 +184,6 @@ h2, p{
 }
 
 @media(max-width: 767px){
-  .connectButtonHeader{
-    display: none;
-  }
   .navbarLogo{
     margin-top: 0;
     margin-left: 4vw;
@@ -203,6 +201,12 @@ h2, p{
     margin: 0;
     margin-top: 0.6vw;
     margin-left: 1.3vw;
+  }
+}
+
+@media(max-width:479px){
+  .connectButtonHeader{
+    display: none;
   }
 }
 
@@ -244,7 +248,6 @@ h2, p{
 .textContainer p{
   margin-top:3vw;
   font-size: 1.5vw;
-  font-family: 'Inconsolata', Consolas, monospace;
 }
 
 #mainImg1{
@@ -364,8 +367,8 @@ h2, p{
   
     .textContainer img{
       position:relative;
-      width: 75%;
-      margin-left: 32%;
+      width: 70%;
+      margin-left: 33%;
     }
   
     .textContainer h1{
@@ -681,6 +684,7 @@ h2, p{
 
 @media screen and (max-width:479px) {
   .Roadmapwall {
+    margin-top: 50px;
     height: 30vh;
   }
   
