@@ -16,14 +16,14 @@ contract SimpleNftLowerGas is ERC721, Ownable {
     // For WL
     bytes32 immutable public merkleRoot;
     mapping(address => bool) public whitelistClaimed;
-    mapping(address => bool) public whitelisted;
+    mapping(address => bool) public publicClaimed;
 
     // For minting
     string public baseURI;
     string public baseExtension = ".json";
     string public notRevealedUri;
 
-    uint256 public cost = 0.2 ether;
+    uint256 public cost = 0.001 ether;
     uint256 public maxSupply = 10000;
     uint256 public maxMintAmount = 2;
 
@@ -57,7 +57,7 @@ contract SimpleNftLowerGas is ERC721, Ownable {
 
     function whitelistmint(uint256 _mintAmount, bytes32[] calldata _merkleProof) public payable mintCompliance(_mintAmount) {
         require(!paused, "The contract is paused!");
-        require(msg.value >= cost * _mintAmount, "Insufficient funds!");
+        require(!public_mint, "Not Whitelist Minting period");
 
         // WL parts
         require(!whitelistClaimed[msg.sender], "Address already claimed");
@@ -66,6 +66,8 @@ contract SimpleNftLowerGas is ERC721, Ownable {
         );
         whitelistClaimed[msg.sender] = true;
         //
+
+        require(msg.value >= cost * _mintAmount, "Insufficient funds!");
 
         for (uint256 i = 0; i < _mintAmount; i++) {
             supply.increment();
@@ -76,8 +78,9 @@ contract SimpleNftLowerGas is ERC721, Ownable {
     function publicmint(uint256 _mintAmount) public payable mintCompliance(_mintAmount) {
         require(!paused, "The contract is paused!");
         require(public_mint, "Not Public Minting period");
+        require(!publicClaimed[msg.sender], "Address already claimed");
         require(msg.value >= cost * _mintAmount, "Insufficient funds!");
-
+        publicClaimed[msg.sender] = true;
         for (uint256 i = 0; i < _mintAmount; i++) {
             supply.increment();
             _mint(msg.sender, supply.current());
@@ -143,6 +146,10 @@ contract SimpleNftLowerGas is ERC721, Ownable {
         revealed = _state;
     }
 
+    function SetPublicMinting(bool _state) public onlyOwner {
+        public_mint = _state;
+    }
+
     function setCost(uint256 _cost) public onlyOwner {
         cost = _cost;
     }
@@ -162,6 +169,11 @@ contract SimpleNftLowerGas is ERC721, Ownable {
 
     function setBaseExtension(string memory _newBaseExtension) public onlyOwner {
         baseExtension = _newBaseExtension;
+    }
+
+    // internal
+    function _baseURI() internal view virtual override returns (string memory) {
+        return baseURI;
     }
     //
 
