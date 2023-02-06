@@ -160,11 +160,42 @@ h2, p{
 @media(max-width: 1023px){
   .connectButtonHeader{
     font-size: 2vw;
+    
+  }
+
+  .navbarLogo{
+    margin-left:calc(20px + 4vw);
+  }
+  
+  .navbarMenu{
+    font-size: 2vw;
+  }
+
+  .navbarMenu a{
+    margin: 12px;
+    margin-top: 15px;
+    margin-left: 0.8vw;
   }
 }
+
 @media(max-width: 767px){
   .connectButtonHeader{
     display: none;
+  }
+  .navbarLogo{
+    margin-top: 0;
+    margin-left: 4vw;
+  }
+
+  .navbarMenu{
+    font-size: calc(0.8px + 1.9vw);
+    margin-right: 5px;
+  }
+
+  .navbarMenu a{
+    margin: 0;
+    margin-top: 0.6vw;
+    margin-left: 1.3vw;
   }
 }
 
@@ -183,7 +214,6 @@ h2, p{
   top:100px;
   left:10%;
   height:80%;
-  border-radius:30px;
   display: flex;
   flex-wrap: nowrap;
 }
@@ -207,6 +237,7 @@ h2, p{
 .textContainer p{
   margin-top:3vw;
   font-size: 1.5vw;
+  font-family: 'Inconsolata', Consolas, monospace;
 }
 
 #mainImg1{
@@ -227,46 +258,7 @@ h2, p{
 
 }
 
-@media(max-width: 1023px){
-  .navbarLogo{
-    margin-left:calc(20px + 4vw);
-  }
-  
-  .navbarMenu{
-    font-size: 2vw;
-  }
-
-  .navbarMenu a{
-    margin: 12px;
-    margin-top: 15px;
-    margin-left: 0.8vw;
-  }
-}
-
 @media(max-width: 767px){
-  .SlideButtonPrev{
-    left: calc(200px - 17.2vw);
-  }
-  .SlideButtonNext{
-    left: calc(-200px + 17.2vw);
-  }
-
-  .navbarLogo{
-    margin-top: 0;
-    margin-left: 4vw;
-  }
-
-
-  .navbarMenu{
-    font-size: calc(0.8px + 1.9vw);
-    margin-right: 5px;
-  }
-
-  .navbarMenu a{
-    margin: 0;
-    margin-top: 0.6vw;
-    margin-left: 1.3vw;
-  }
   .mainContainer{
     flex-direction: column;
   }
@@ -578,6 +570,8 @@ h2, p{
   background-color: black;
 }
 
+
+
 .gradient-text {
   font-family: 'Inconsolata', Consolas, monospace;
   font-weight: normal;
@@ -588,7 +582,6 @@ h2, p{
   margin-top: 5vh;
   margin-left: auto;
   margin-right: auto;
-  cursor: pointer;
   width: 100vw;
   background-color: #ffffff;
   background-image: linear-gradient(
@@ -689,6 +682,68 @@ h2, p{
   }
 }
 
+.gradient-text1 {
+  font-family: 'Inconsolata', Consolas, monospace;
+  font-weight: normal;
+  font-size: 5vw;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  margin-top: 5vh;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100vw;
+  background-color: #ffffff;
+  background-image: linear-gradient(
+        45deg,
+        rgb(255, 148, 148) 16.666%, 
+        rgb(255, 220, 154) 16.666%, 
+        rgb(252, 253, 166) 33.333%, 
+        rgb(156, 255, 153) 33.333%, 
+        rgb(194, 219, 252) 50%, 
+        rgb(122, 147, 255) 50%, 
+        rgb(180, 134, 255) 66.666%, 
+        rgb(251, 135, 255) 66.666%, 
+        rgb(255, 113, 255) 83.333%, 
+        rgb(255, 239, 250) 83.333%);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+}
+
+.main { 
+  width: 100vw; 
+  height: 70vh; 
+  background: black;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  perspective: 225px;
+}
+
+.worldmap { 
+  flex-grow: 1;
+  width: 100%;
+  max-width: 80vw;
+  background: none;
+}
+.worldmap svg { width: 100%; background: none; position: relative}
+
+.roadmap1{
+  font-family: 'Inconsolata', Consolas, monospace;
+  width : 20vw;
+  height: 10vh;
+  display: flex;
+  background-color: rgb(0, 0, 0);
+  color :rgb(252, 252, 252);
+  justify-content: center; 
+  align-items: center;
+  top : 130vh;
+  left : 25vw;
+  position: absolute;
+  border-radius: 1vw;
+}
 
 /* FAQ CSS*/
 
@@ -806,6 +861,14 @@ h2, p{
     margin-left: 15px;
     font-weight: lighter;
   }
+
+  .SlideButtonPrev{
+    left: calc(200px - 17.2vw);
+  }
+  .SlideButtonNext{
+    left: calc(-200px + 17.2vw);
+  }
+
 }
 
 @media screen and (max-width:479px) {
@@ -1038,6 +1101,7 @@ h2, p{
   .select option{
     font-size: 12px;
   }
+  
   .unit{
     font-size: 14px;
     font-weight: bold;
