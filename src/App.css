@@ -409,7 +409,8 @@ h2, p{
 
 .Roadmapwall {
   width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  height: 80vh;
   align-items: center;
   background-image: url(./img/roadmapwall.png);
   background-size : contain;
@@ -424,14 +425,14 @@ h2, p{
 
 .slideText-wrap2{
   width: 100vw;
-  height: 100vh;
+  height: 150vh;
   border-radius: 1000px 1000px 0px 0px;
   position: relative;
   overflow: hidden;
 }
 
 .slideText-wrap {
-  margin-top: 3vh;
+  margin-top: 5vh;
   width: 300vw;
   overflow: hidden;
 }
@@ -607,6 +608,36 @@ h2, p{
   margin-bottom: 5vh;
 }
 
+.gradient-text1 {
+  font-family: 'Inconsolata', Consolas, monospace;
+  font-weight: normal;
+  font-size: 5vw;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  margin-top: 5vh;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100vw;
+  background-color: #ffffff;
+  background-image: linear-gradient(
+        30deg,
+        rgb(0, 203, 253) 16.666%, 
+        rgb(50, 231, 255) 16.666%, 
+        rgb(0, 203, 253) 33.333%, 
+        rgb(50, 231, 255) 33.333%, 
+        rgb(0, 203, 253) 50%, 
+        rgb(50, 231, 255) 50%, 
+        rgb(0, 203, 253) 66.666%, 
+        rgb(50, 231, 255) 66.666%, 
+        rgb(0, 203, 253) 83.333%, 
+        rgb(50, 231, 255) 83.333%);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+}
+
 @keyframes rainbow-text-simple-animation-rev {
     0% {
         background-size: 300%;
@@ -648,17 +679,18 @@ h2, p{
   margin-bottom: 1vw;
 }
 
+
 @keyframes typing {
   from{ width: 0;}
 }
 
 @media screen and (max-width:1100px){
   .Roadmapwall {
-    height: 80vh;
+    height: 120vh;
     padding-top: 17vw;
   }
   .slideText-wrap2{
-    height: 80vh;
+    height: 150vh;
   }
 }
 
@@ -668,7 +700,7 @@ h2, p{
   }
   
   .slideText-wrap2{
-    height: 40vh;
+    height: 150vh;
   }
 }
 
@@ -678,38 +710,8 @@ h2, p{
   }
   
   .slideText-wrap2{
-    height: 30vh;
+    height: 150vh;
   }
-}
-
-.gradient-text1 {
-  font-family: 'Inconsolata', Consolas, monospace;
-  font-weight: normal;
-  font-size: 5vw;
-  font-weight: bold;
-  text-align: center;
-  display: block;
-  margin-top: 5vh;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100vw;
-  background-color: #ffffff;
-  background-image: linear-gradient(
-        45deg,
-        rgb(255, 148, 148) 16.666%, 
-        rgb(255, 220, 154) 16.666%, 
-        rgb(252, 253, 166) 33.333%, 
-        rgb(156, 255, 153) 33.333%, 
-        rgb(194, 219, 252) 50%, 
-        rgb(122, 147, 255) 50%, 
-        rgb(180, 134, 255) 66.666%, 
-        rgb(251, 135, 255) 66.666%, 
-        rgb(255, 113, 255) 83.333%, 
-        rgb(255, 239, 250) 83.333%);
-  background-size: 100%;
-  background-repeat: repeat;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
 }
 
 .main { 
@@ -730,7 +732,8 @@ h2, p{
 }
 .worldmap svg { width: 100%; background: none; position: relative}
 
-.roadmap1{
+
+#bubble1, #bubble2, #bubble3, #bubble4, #bubble5, #bubble6 {
   font-family: 'Inconsolata', Consolas, monospace;
   width : 20vw;
   height: 10vh;
@@ -739,24 +742,80 @@ h2, p{
   color :rgb(252, 252, 252);
   justify-content: center; 
   align-items: center;
-  top : 130vh;
-  left : 25vw;
+  top: -50vh;
+  left: 20vw;
   position: absolute;
   border-radius: 1vw;
+  display:none;
+  margin: 1rem;
+  padding: 1rem;
+  background: #000000;
 }
+
+#bubble2 {
+  top: -40vh;
+  left: 20vw;
+}
+#bubble3 {
+  top: -40vh;
+  left: 20vw;
+}
+
+#bubble4 {
+  top: -40vh;
+  left: 20vw;
+}
+
+#bubble5 {
+  top: -40vh;
+  left: 20vw;
+}
+
+#bubble6 {
+  top: -40vh;
+  left: 20vw;
+}
+
+
+
+
+
+
 
 /* FAQ CSS*/
 
 .FAQtext {
-  font-size: 50px;
-  color: #ffffff;
+  font-size: 10vw;
+  background-image: linear-gradient(
+        30deg,
+        rgb(255, 148, 148) 16.666%, 
+        rgb(255, 220, 154) 16.666%, 
+        rgb(252, 253, 166) 33.333%, 
+        rgb(156, 255, 153) 33.333%, 
+        rgb(194, 219, 252) 50%, 
+        rgb(122, 147, 255) 50%, 
+        rgb(180, 134, 255) 66.666%, 
+        rgb(251, 135, 255) 66.666%, 
+        rgb(255, 113, 255) 83.333%, 
+        rgb(255, 239, 250) 83.333%);
   text-align: center;
   font-weight: bold;
-  margin-bottom: 5vh;
+  margin-bottom: 3vh;
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  animation-name: rainbow-text-simple-animation-rev;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  margin-top: -10vh;
 }
 
 .Appa {
+  display: flex;
   text-align: center;
+  justify-content: center;
 }
 
 .question-section {
@@ -771,7 +830,7 @@ h2, p{
 .question-align {
   align-items: center;
   display: flex;
-  min-height: 40px;
+  min-height: 6vh;
   text-align: center;
 }
 
@@ -793,7 +852,7 @@ h2, p{
   border: none;
   color: #ffffff;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 2vw;
   margin-left: auto;
   margin-right: 15px;
 
@@ -818,7 +877,14 @@ h2, p{
 
 .Appa p{
   color: rgb(255, 255, 255);
-  font-size: 15px;
+  font-size: 20px;
+}
+
+.bar1{
+  height: 0.5px;
+  width: 90%;
+  background-color: white;
+  margin-bottom: 15px;
 }
 
 @media screen and (max-width:1023px) {
