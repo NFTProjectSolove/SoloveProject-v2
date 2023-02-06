@@ -3,7 +3,7 @@ import { useState } from 'react';
 function Roadmap(){
     function Slogun(){
         return(
-          <div className = "Roadmapcontainer">
+          <>
             <div className="slideText-wrap2">
               <div className="slideText-wrap">
                 <div className = "slideText-box">
@@ -44,7 +44,7 @@ function Roadmap(){
               </div>
             </div>
           </div>
-        </div>
+          </>
         )
     }
 

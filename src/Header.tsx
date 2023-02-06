@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { NavLink } from 'react-router-dom';    
 import {ConnectButton} from '@rainbow-me/rainbowkit';
-
+import { GiHamburgerMenu } from "react-icons/gi";
+import {useState} from 'react';
 
 const StyledLink = styled(NavLink)`
   margin: 30px;
@@ -9,6 +10,24 @@ const StyledLink = styled(NavLink)`
 `
 
 function Header(){
+  const [toggleOn, SetToggleOn] = useState(false)
+
+  const NavbarMenu = () => {
+    return(
+      <>
+            <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/'><p>HOME</p></StyledLink>
+            <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/About'><p>ABOUT</p></StyledLink>
+            <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/Roadmap'><p>ROADMAP</p></StyledLink>
+            <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/Faq'><p>FAQ</p></StyledLink>
+            <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/Mint'><p>MINT</p></StyledLink>
+      </>
+    )
+  }
+
+  const toggleClick = () => {
+    (toggleOn)? SetToggleOn(false): SetToggleOn(true); 
+  }
+
     return(
       <div id="header">
         <div className="navbar">
@@ -16,12 +35,9 @@ function Header(){
             <img src="/solovelogo.svg" alt="Logo" style={{height:'calc(20px + 0.7vw)'}}/>
           </div>
           <div className="navbarMenu">
-            <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/'><p>HOME</p></StyledLink>
-            <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/About'><p>ABOUT</p></StyledLink>
-            <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/Roadmap'><p>ROADMAP</p></StyledLink>
-            <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/Faq'><p>FAQ</p></StyledLink>
-            <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/Mint'><p>MINT</p></StyledLink>
+            <NavbarMenu/>
           </div>
+          <GiHamburgerMenu className="navbarHamburger" color="white" onClick={toggleClick} />
           <div>
             <ConnectButton.Custom>
               {({
@@ -69,7 +85,7 @@ function Header(){
                       }
 
                       return (
-                        <div style={{ display: 'flex', gap: 12}} className="connectButtonHeader">
+                        <div style={{gap: 12}} className="connectButtonHeader">
                           <button
                             onClick={openChainModal}
                             style={{ display: 'flex', alignItems: 'center', color:'white'}}
@@ -111,6 +127,9 @@ function Header(){
             </ConnectButton.Custom>
           </div>
         </div>
+        <div className="toggle">
+            {toggleOn && <div className="navbarMenuMobile"><NavbarMenu/></div> }
+          </div>
       </div>
     )
   }

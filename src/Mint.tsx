@@ -5,6 +5,7 @@ import {
 } from '@chakra-ui/react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 import { useAccount, useContractRead, useContractWrite} from 'wagmi';
 import abiFile from './Solove.json';
 import { MerkleTree } from 'merkletreejs';
@@ -33,9 +34,6 @@ const merkleTree = new MerkleTree(leafNodes, keccak256);
 
 const CONTRACT_ADDRESS = process.env.REACT_APP_CONTRACT_ADDRESS;
 
-const getOpenSeaURL = (tokenId: string | number) =>
-    `https://testnets.opensea.io/assets/goerli/${CONTRACT_ADDRESS}/${tokenId}`;
-
 function Mint() {
   const contractConfig = {
     addressOrName: CONTRACT_ADDRESS,
@@ -44,20 +42,21 @@ function Mint() {
 
   const [mintcnt, setMintcnt] = useState(1);
 
-  const { data: tokenURI } = useContractRead({
-    ...contractConfig,
-    functionName: 'notRevealedUri',
-  });
+  // const { data: tokenURI } = useContractRead({
+  //   ...contractConfig,
+  //   functionName: 'notRevealedUri',
+  // });
   const [imgURL, setImgURL] = useState('');
 
   const { writeAsync: mint, error: mintError } = useContractWrite({
-    ...contractConfig,
+    addressOrName: "0x16eBA794fE1B433eE5B13977CE79E0fAfbE0eEd9",
+    contractInterface: abiFile,
     functionName: 'whitelistmint'
   });
   const [mintLoading, setMintLoading] = useState(false);
   const { address } = useAccount();
   const isConnected = !!address;
-  const [mintedTokenId, setMintedTokenId] = useState<number>();
+  const [mintedTokenId, setMintedTokenId] = useState<string|number>(0);
 
   const onMintClick = async () => {
     try {
@@ -81,21 +80,30 @@ function Mint() {
     }
   };
 
-
-  useEffect(() => {
-    (async () => {
-      if (tokenURI) {
-        const res = await (await fetch(tokenURI as unknown as string)).json();
-        setImgURL(res.image);
-      }
-    })();
-  }, [tokenURI]);
-
   useEffect(()=>{
     if(mintError){
-      alert("⛔️ Mint unsuccessful! Error message:" + JSON.stringify(mintError, null, ' '))
+      Swal.fire({
+        html: JSON.stringify(mintError,null,' '),
+        icon:"error",
+      })
     }
-  },[mintError])
+    if(mintedTokenId){
+      Swal.fire(
+      {
+        html:'Mint successful! You can view your NFT\n  <a target="_blank" href="https://testnets.opensea.io/assets/goerli/${CONTRACT_ADDRESS}/${tokenId}"><p style="color:green">Click me!</p></a>',
+        icon:'success',
+      });
+    }
+    if(mintLoading){
+      Swal.fire({
+        text: 'Minting.. please wait ',
+        icon: 'info',
+        toast: true,
+        timerProgressBar: true,
+        timer:10000
+      })
+    }
+  },[mintError, mintedTokenId, mintLoading])
 
   const Counter = () => {
     const mintcntList = [1, 2, 3, 4, 5];
@@ -199,23 +207,6 @@ function Mint() {
                   >Mint Now</Button>}
             </div>
           </div>
-
-
-          {mintLoading && <Text marginTop='2'>Minting... please wait</Text>}
-
-          {mintedTokenId && (
-              <Text marginTop='2'>
-                🥳 Mint successful! You can view your NFT{' '}
-                <Link
-                    isExternal
-                    href={getOpenSeaURL(mintedTokenId)}
-                    color='blue'
-                    textDecoration='underline'
-                >
-                  here!
-                </Link>
-              </Text>
-          )}
         </div>
       </div>
   )
