@@ -90,7 +90,7 @@ function Mint() {
     if(mintedTokenId){
       Swal.fire(
       {
-        html: 'Mint successful! You can view your NFT\n  <a target="_blank" href="https://testnets.opensea.io/assets/goerli/${CONTRACT_ADDRESS}/${tokenId}"><p style="color:green">Click me!</p></a>',
+        html:'Mint successful! You can view your NFT\n  <a target="_blank" href="https://testnets.opensea.io/assets/goerli/${CONTRACT_ADDRESS}/${tokenId}"><p style="color:green">Click me!</p></a>',
         icon:'success',
       });
     }
