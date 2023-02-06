@@ -16,7 +16,7 @@ contract SimpleNftLowerGas is ERC721, Ownable {
     // For WL
     bytes32 immutable public merkleRoot;
     mapping(address => bool) public whitelistClaimed;
-    mapping(address => bool) public whitelisted;
+    mapping(address => bool) public publicClaimed;
 
     // For minting
     string public baseURI;
@@ -78,8 +78,9 @@ contract SimpleNftLowerGas is ERC721, Ownable {
     function publicmint(uint256 _mintAmount) public payable mintCompliance(_mintAmount) {
         require(!paused, "The contract is paused!");
         require(public_mint, "Not Public Minting period");
+        require(!publicClaimed[msg.sender], "Address already claimed");
         require(msg.value >= cost * _mintAmount, "Insufficient funds!");
-
+        publicClaimed[msg.sender] = true;
         for (uint256 i = 0; i < _mintAmount; i++) {
             supply.increment();
             _mint(msg.sender, supply.current());
@@ -145,7 +146,7 @@ contract SimpleNftLowerGas is ERC721, Ownable {
         revealed = _state;
     }
 
-    function SetMintState(bool _state) public onlyOwner {
+    function SetPublicMinting(bool _state) public onlyOwner {
         public_mint = _state;
     }
 
