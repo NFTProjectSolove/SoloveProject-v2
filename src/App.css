@@ -202,11 +202,9 @@ h2, p{
     margin-top: 0.6vw;
     margin-left: 1.3vw;
   }
-}
-
-@media(max-width:479px){
   .connectButtonHeader{
-    display: none;
+    display:none;
+    
   }
 }
 
@@ -347,8 +345,8 @@ h2, p{
     }
   
     .imgContainer{
-      height: 50vw;
-      padding-top: 6vw;
+      height: 45vw;
+      padding-top: calc(200px - 60vw);
       display: flex;
       justify-content: center;
       min-height: none;
@@ -383,8 +381,7 @@ h2, p{
     }
   
     .textContainer p{
-      font-size: 3vw;
-      font-size: 4vw;
+      font-size: 3.5vw;
     }
   
     #mainImg1{

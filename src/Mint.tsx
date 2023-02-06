@@ -82,7 +82,6 @@ function Mint() {
 
   useEffect(()=>{
     if(mintError){
-      console.log(mintError)
       Swal.fire({
         html: JSON.stringify(mintError,null,' '),
         icon:"error",
@@ -101,8 +100,7 @@ function Mint() {
         icon: 'info',
         toast: true,
         timerProgressBar: true,
-        timer:10000,
-        showCloseButton:false
+        timer:10000
       })
     }
   },[mintError, mintedTokenId, mintLoading])
