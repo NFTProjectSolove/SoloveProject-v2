@@ -15,8 +15,8 @@ function Header(){
   const NavbarMenu = () => {
     return(
       <>
-            <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/'><p>HOME</p></StyledLink>
-            <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/About'><p>ABOUT</p></StyledLink>
+            <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/MainHome'><p>HOME</p></StyledLink>
+            <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/Story'><p>STORY</p></StyledLink>
             <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/Roadmap'><p>ROADMAP</p></StyledLink>
             <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/Faq'><p>FAQ</p></StyledLink>
             <StyledLink className={({ isActive }) => isActive ? 'active' : ''} to='/Mint'><p>MINT</p></StyledLink>
