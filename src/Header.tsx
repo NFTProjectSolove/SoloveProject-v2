@@ -71,7 +71,7 @@ function Header(){
                       if (!connected) {
                         return (
                           <button onClick={openConnectModal} type="button" className="connectButtonHeader">
-                            Connect Wallet
+                            Connect
                           </button>
                         );
                       }
