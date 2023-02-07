@@ -168,7 +168,7 @@ h2, p{
 
 @media(max-width: 1023px){
   .connectButtonHeader{
-    font-size: 2vw;
+    font-size: 1.6vw;
     
   }
 
@@ -214,9 +214,10 @@ h2, p{
   }
 
   .navbarLogo{
-    margin-left: 0;
-  
+    position: absolute;
+    margin-left: calc(48vw - 105px);
   }
+
   .navbarMenu{
     display:none;
   }
@@ -237,7 +238,7 @@ h2, p{
 
   .navbarMenuMobile{
     font-size: 20px;
-    text-align: center;
+    margin-left: calc(30px - 60vw);
   }
 }
 
