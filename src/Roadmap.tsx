@@ -116,7 +116,7 @@ function Roadmap(){
               break;
           }
         }
-      ,[hover])
+      ,[])
       
       return(
         <>

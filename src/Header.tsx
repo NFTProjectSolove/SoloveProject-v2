@@ -71,7 +71,7 @@ function Header(){
                       if (!connected) {
                         return (
                           <button onClick={openConnectModal} type="button" className="connectButtonHeader">
-                            Connect
+                            Connect Wallet
                           </button>
                         );
                       }
@@ -128,8 +128,8 @@ function Header(){
           </div>
         </div>
         <div className="toggle">
-            {toggleOn && <div className="navbarMenuMobile"><NavbarMenu/></div> }
-          </div>
+          {toggleOn && <div className="navbarMenuMobile"><NavbarMenu/></div> }
+        </div>
       </div>
     )
   }
