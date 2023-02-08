@@ -31,13 +31,14 @@ function Header(){
     return(
       <div id="header">
         <div className="navbar">
+          <GiHamburgerMenu className="navbarHamburger" color="white" onClick={toggleClick} />
           <div className="navbarLogo">
-            <img src="/solovelogo.svg" alt="Logo" style={{height:'calc(20px + 0.7vw)'}}/>
+            <img className="navLogoImg" src="/solovelogo.svg" alt="LogoWithText"/>
+            <img className="navOnlyLogoImg" src="/icon.png" alt="Logo" />
           </div>
           <div className="navbarMenu">
             <NavbarMenu/>
           </div>
-          <GiHamburgerMenu className="navbarHamburger" color="white" onClick={toggleClick} />
           <div>
             <ConnectButton.Custom>
               {({
@@ -71,7 +72,7 @@ function Header(){
                       if (!connected) {
                         return (
                           <button onClick={openConnectModal} type="button" className="connectButtonHeader">
-                            Connect Wallet
+                            Connect
                           </button>
                         );
                       }
@@ -128,8 +129,8 @@ function Header(){
           </div>
         </div>
         <div className="toggle">
-            {toggleOn && <div className="navbarMenuMobile"><NavbarMenu/></div> }
-          </div>
+          {toggleOn && <div className="navbarMenuMobile"><NavbarMenu/></div> }
+        </div>
       </div>
     )
   }

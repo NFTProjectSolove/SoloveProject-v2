@@ -57,6 +57,8 @@ function Mint() {
   const { address } = useAccount();
   const isConnected = !!address;
   const [mintedTokenId, setMintedTokenId] = useState<string|number>(0);
+  const [isDisabledByDate, setIsDisabledByDate] = useState<boolean>(true);
+  const disabledDate = "2023-02-10";  //mint 날짜 넣어주면 됨 입력된 날짜에 열림
 
   const onMintClick = async () => {
     try {
@@ -104,6 +106,13 @@ function Mint() {
       })
     }
   },[mintError, mintedTokenId, mintLoading])
+
+  useEffect(() => {
+    const now = new Date();
+    if (now >= new Date(disabledDate)) {
+      setIsDisabledByDate(false);
+    }
+  }, [disabledDate]);
 
   const Counter = () => {
     const mintcntList = [1, 2, 3, 4, 5];
@@ -174,7 +183,7 @@ function Mint() {
                               if (!connected) {
                                 return (
                                     <button onClick={openConnectModal} type="button" className="connectButtonMint">
-                                      Connect Wallet
+                                      <p>Connect Wallet</p>
                                     </button>
                                 );
                               }
@@ -182,7 +191,7 @@ function Mint() {
                               if (chain.unsupported) {
                                 return (
                                     <button onClick={openChainModal} type="button" className="connectButtonMint">
-                                      Wrong network
+                                      <p>Wrong network</p>
                                     </button>
                                 );
                               }
@@ -194,7 +203,7 @@ function Mint() {
               {isConnected &&
                   <Button
                       height={'5vh'}
-                      width={'clamp(120px,15vw,250px)'}
+                      width={'clamp(120px,20vw,250px)'}
                       white-space= {'nowrap'}
                       className='mintButton'
                       backgroundColor={'#7A7F92'}
@@ -204,7 +213,8 @@ function Mint() {
                       font-family='PoppinsLight'
                       borderRadius={'20px'}
                       _hover={{bg :'#9197ac'}}
-                  >Mint Now</Button>}
+                      isDisabled={isDisabledByDate}
+                  > {isDisabledByDate ? 'Coming Soon' :'Mint Now'}</Button>}
             </div>
           </div>
         </div>

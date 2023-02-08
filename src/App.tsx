@@ -12,7 +12,7 @@ const App = () => {
     const location = useLocation();
 
 return (
-    <div style={{backgroundColor:'black', position:'absolute', top:'0', }}>
+    <div style={{backgroundColor:'black', position:'absolute', top:'0' }}>
         <Header/>
         <TransitionGroup className="transitionWrapper"> 
             <CSSTransition
