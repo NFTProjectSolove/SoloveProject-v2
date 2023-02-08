@@ -51,9 +51,7 @@ export default function Appa({questiontext, answertext}: propsType) {
                 className={active ? `answer answer-divider` : `answer`}
               >
                 <p>{answertext}</p>
-                <p>{answertext}</p>
-                <p>{answertext}</p>
-                <p>{answertext}</p>
+
 
               </div>
             </div>
