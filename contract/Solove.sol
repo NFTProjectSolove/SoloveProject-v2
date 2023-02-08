@@ -24,7 +24,7 @@ contract SimpleNftLowerGas is ERC721, Ownable {
     string public notRevealedUri;
 
     uint256 public cost = 0.001 ether;
-    uint256 public maxSupply = 10000;
+    uint256 public maxSupply = 4000;
     uint256 public maxMintAmount = 2;
 
     // For operation
@@ -55,7 +55,7 @@ contract SimpleNftLowerGas is ERC721, Ownable {
         return supply.current();
     }
 
-    function whitelistmint(uint256 _mintAmount, bytes32[] calldata _merkleProof) public payable mintCompliance(_mintAmount) {
+    function whitelistmint(uint256 _mintAmount, bytes32[] calldata _merkleProof) public mintCompliance(_mintAmount) {
         require(!paused, "The contract is paused!");
         require(!public_mint, "Not Whitelist Minting period");
 
@@ -67,7 +67,6 @@ contract SimpleNftLowerGas is ERC721, Ownable {
         whitelistClaimed[msg.sender] = true;
         //
 
-        require(msg.value >= cost * _mintAmount, "Insufficient funds!");
 
         for (uint256 i = 0; i < _mintAmount; i++) {
             supply.increment();
@@ -75,11 +74,10 @@ contract SimpleNftLowerGas is ERC721, Ownable {
         }
     }
 
-    function publicmint(uint256 _mintAmount) public payable mintCompliance(_mintAmount) {
+    function publicmint(uint256 _mintAmount) public mintCompliance(_mintAmount) {
         require(!paused, "The contract is paused!");
         require(public_mint, "Not Public Minting period");
         require(!publicClaimed[msg.sender], "Address already claimed");
-        require(msg.value >= cost * _mintAmount, "Insufficient funds!");
         publicClaimed[msg.sender] = true;
         for (uint256 i = 0; i < _mintAmount; i++) {
             supply.increment();
