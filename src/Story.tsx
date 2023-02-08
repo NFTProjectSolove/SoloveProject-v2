@@ -1,7 +1,7 @@
 function Story (){
       
     return(
-      <>
+      <div className="tranPage">
         <div className="storytitleContainer">
           <h1 className="gradient-text">Solove Story : Solove World!</h1>
           <p className="stroyfirsttext">In 2050, I discovered Solove World while traveling in a spacecraft
@@ -23,7 +23,7 @@ function Story (){
           <div className="storyfirst">  
           </div>
         </div> 
-      </>  
+      </div>  
     )
   }
 

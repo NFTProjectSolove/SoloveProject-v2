@@ -21,7 +21,7 @@ return (
                 timeout={300}
                 >
                 <Routes location={location}> 
-                    <Route path='/MainHome'  element={<MainHome/> }></Route>        
+                    <Route path='/'  element={<MainHome/> }></Route>        
                     <Route path='/Story' element={<Story/>}></Route>
                     <Route path='/Roadmap' element={<Roadmap/>}></Route>
                     <Route path='/Faq' element={<Faq/>}></Route>
