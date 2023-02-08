@@ -567,7 +567,7 @@ h2, p{
   max-width: 60vw;
 }
 
-.worldmap > svg { width: 100%; background: none; position: relative; margin-top: calc(-120px + 20vh);}
+.worldmap > svg { width: 100%; background: none; position: relative; margin-top: calc(-20px + 8vh);}
 
 .Roadmap1{
   fill : rgb(59, 179, 250);
@@ -666,7 +666,6 @@ h2, p{
 
 
   .worldmap {
-    margin-top : 20vh;
     flex-grow: 1;
     width : 100vw;
     max-width: 100vw;
