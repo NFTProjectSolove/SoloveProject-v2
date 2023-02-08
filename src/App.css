@@ -140,6 +140,14 @@ h2, p{
   margin-top:0px;
 }
 
+.navLogoImg{
+  height:calc(20px + 0.7vw);
+}
+
+.navOnlyLogoImg{
+  display:none;
+}
+
 .navbarMenu{
   display: flex;
   border:black;
@@ -168,7 +176,7 @@ h2, p{
   display:none;
 }
 
-@media(max-width: 1023px){
+@media screen and (max-width: 1023px){
   .connectButtonHeader{
     font-size: 1.6vw;
     
@@ -192,7 +200,6 @@ h2, p{
 @media(max-width: 767px){
   .navbarLogo{
     margin-top: 0;
-    margin-left: 4vw;
   }
 
   .navbarMenu{
@@ -216,8 +223,16 @@ h2, p{
   }
 
   .navbarLogo{
-    position: absolute;
-    margin-left: calc(48vw - 105px);
+    margin-left: 4vw;
+  }
+  
+  .navLogoImg{
+    display:none;
+  }
+
+  .navOnlyLogoImg{
+    height:calc(30px + 0.7vw);
+    display:block;
   }
 
   .navbarMenu{
@@ -231,16 +246,16 @@ h2, p{
     display:flex;
     position: relative;
     width:100vw;
-    right:10vw;
+    right:13vw;
     opacity:0.8;
     flex-flow: column nowrap;
-    align-items: center;
+    align-items: left;
+    padding: 0 30px;
     background-color: black;
   }
 
   .navbarMenuMobile{
     font-size: 20px;
-    margin-left: calc(30px - 60vw);
   }
 }
 
@@ -265,20 +280,9 @@ h2, p{
   display: flex;
 }
 
-.mainContainer{
-  width:80%;
-  position:relative;
-  top:100px;
-  left:10%;
-  height:80%;
-  display: flex;
-  flex-wrap: nowrap;
-}
-
 .textContainer{
   width:40%;
-  margin-top: -1vw;
-  padding: 2vw;
+  padding: 10vw 2vw;
 }
 
 .textContainer h1{
@@ -294,6 +298,13 @@ h2, p{
 .textContainer p{
   margin-top:3vw;
   font-size: 1.5vw;
+}
+
+.shopButton{
+  width: 12vw;
+  position:relative;
+  white-space: nowrap;
+  top:20px;
 }
 
 #mainImg1{
@@ -314,22 +325,80 @@ h2, p{
 
 }
 
-@media(max-width: 767px){
-  .mainContainer{
+@media screen and (max-width: 1023px){
+  .bigContainer{
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .imgContainer{
     display: flex;
     justify-content: center;
-    min-height: none;
-    margin-top: calc(-1.5vw + 20px);
     width:90%;
   }
 
   .textContainer{
+    display:flex; 
+    flex-flow: column nowrap;
+    align-items: center;
     position: relative;
     width: 90%;
+    text-align: center;
+    top: calc(-7vw + 20px);
+  }
+
+  .textContainer h1{
+    font-size: 7vw;
+    line-height:1.8em;
+  }
+
+  .textContainer p{
+    font-size: 30px;
+  }
+
+  #mainImg1 img{
+    width: 42vw;
+    height: 42vw;
+  }
+
+  #mainImg2 img{
+    width: 18vw;
+    height:18vw;
+  }
+
+  #mainImg3 img{
+    width: 28vw;
+    height: 28vw;
+  }
+
+  #mainImg3{
+    position:absolute;
+    padding-top: 24vw;
+    padding-left: 24vw;
+  }
+
+  .shopButton{
+    width: 20vw;
+  }
+} 
+
+@media screen and (max-width: 767px){
+  .bigContainer{
+    align-items:normal;
+    justify-content:flex-start;
+  }
+
+  .imgContainer{
+    display: flex;
+    min-height: none;
+    margin-top: calc(-1.5vw + 20px);
+  }
+
+  .textContainer{
+    position: relative;
+    align-items: normal;
+    display:block;
     text-align: center;
     top: calc(-7vw + 20px);
     
@@ -372,6 +441,15 @@ h2, p{
     padding-left: 20vw;
   
   }
+
+  .shopButton{
+    width: 32vw;
+    top:10px;
+  }
+
+  .shopButton p{
+    font-size: 24px;
+  }
 } 
 
 @media(max-width: 479px){
@@ -379,11 +457,12 @@ h2, p{
       position:relative;
       flex-direction: column;
       align-items: center;
+      padding:10px 10px;
     }
   
     .imgContainer{
       height: 45vw;
-      padding-top: calc(200px - 60vw);
+      padding-top: calc(240px - 60vw);
       display: flex;
       justify-content: center;
       min-height: none;
@@ -392,18 +471,18 @@ h2, p{
   
     .textContainer{
       margin-top: 1vw;
-      width: 50vw;
-      position: relative;
+      width: 50vw;  
       width: 90%;
       text-align: center;
-      top: 80px;
+      margin-top:90px;
+      padding: 0 0;
   
     }
   
     .textContainer img{
       position:relative;
-      width: 70%;
-      margin-left: 33%;
+      width: 60%;
+      margin-left: 37%;
     }
   
     .textContainer h1{
@@ -444,6 +523,12 @@ h2, p{
     #mainImg3 img{
       width: 28vw;
       height: 28vw;
+    }
+
+    .shopButton{
+      width: 32vw;
+      height: 7vw;
+      top:10px;
     }
   }
 

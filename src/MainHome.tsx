@@ -31,7 +31,7 @@ function MainHome(){
                         <h1>Welcome to</h1>
                         <img src="/solovewhite.png" alt="Solove" width='60%'></img>
                         <p>Solove Supports all the loves in the world. Join our world and create a new relationship.</p>
-                        <StyledButton style= {{marginTop:'1vw', padding:'0.2vw 1vw 0.2vw 1vw'}} type="submit" formTarget='_blank' href="https://opensea.io">Click to shop ➠</StyledButton>
+                        <StyledButton className="shopButton" type="submit" formTarget='_blank' href="https://opensea.io">Click to shop ➠</StyledButton>
                     </div>
                 </div>
             </div>
