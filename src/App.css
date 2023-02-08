@@ -496,6 +496,7 @@ h2, p{
 
 
 .gradient-text1 {
+  margin-top: 3vh;
   font-weight: bold;
   font-size: 50px;
   font-weight: 1000;
@@ -566,7 +567,7 @@ h2, p{
   max-width: 60vw;
 }
 
-.worldmap > svg { width: 100%; background: none; position: relative}
+.worldmap > svg { width: 100%; background: none; position: relative; margin-top: calc(-120px + 20vh);}
 
 .Roadmap1{
   fill : rgb(59, 179, 250);
