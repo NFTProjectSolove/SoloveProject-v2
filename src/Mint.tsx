@@ -58,7 +58,7 @@ function Mint() {
   const isConnected = !!address;
   const [mintedTokenId, setMintedTokenId] = useState<string|number>(0);
   const [isDisabledByDate, setIsDisabledByDate] = useState<boolean>(true);
-  const disabledDate = "2023-02-10";  //mint 날짜 넣어주면 됨 입력된 날짜에 열림
+  const disabledDate = "2023-02-05";  //mint 날짜 넣어주면 됨 입력된 날짜에 열림
 
   const onMintClick = async () => {
     try {
@@ -112,7 +112,7 @@ function Mint() {
     if (now >= new Date(disabledDate)) {
       setIsDisabledByDate(false);
     }
-  }, [disabledDate]);
+  }, []);
 
   const Counter = () => {
     const mintcntList = [1, 2, 3, 4, 5];
