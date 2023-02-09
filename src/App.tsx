@@ -5,6 +5,8 @@ import Story from "./Story";
 import Roadmap from "./Roadmap";
 import Faq from "./Faq";
 import Header from "./Header";
+import SnsLogo from "./SnsLogo";
+import Footer from "./Footer";
 import { Route, Routes, useLocation} from "react-router";
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
@@ -14,6 +16,8 @@ const App = () => {
 return (
     <div style={{backgroundColor:'black', position:'absolute', top:'0' }}>
         <Header/>
+        <SnsLogo/>
+        <Footer/>
         <TransitionGroup className="transitionWrapper"> 
             <CSSTransition
                 key={location.pathname}
