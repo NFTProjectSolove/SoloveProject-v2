@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { NavLink } from 'react-router-dom';    
+import { NavLink, useNavigate } from 'react-router-dom';    
 import {ConnectButton} from '@rainbow-me/rainbowkit';
 import { GiHamburgerMenu } from "react-icons/gi";
 import {useState} from 'react';
@@ -11,6 +11,10 @@ const StyledLink = styled(NavLink)`
 
 function Header(){
   const [toggleOn, SetToggleOn] = useState(false)
+
+  const toggleClick = () => {
+    (toggleOn)? SetToggleOn(false): SetToggleOn(true); 
+  }
 
   const NavbarMenu = () => {
     return(
@@ -24,15 +28,14 @@ function Header(){
     )
   }
 
-  const toggleClick = () => {
-    (toggleOn)? SetToggleOn(false): SetToggleOn(true); 
-  }
+  const Navigate = useNavigate()
+
 
     return(
       <div id="header">
         <div className="navbar">
           <GiHamburgerMenu className="navbarHamburger" color="white" onClick={toggleClick} />
-          <div className="navbarLogo">
+          <div className="navbarLogo" onClick={()=>{Navigate('/', {replace:true})}}>
             <img className="navLogoImg" src="/solovelogo.svg" alt="LogoWithText"/>
             <img className="navOnlyLogoImg" src="/icon.png" alt="Logo" />
           </div>
