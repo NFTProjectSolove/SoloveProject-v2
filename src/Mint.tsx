@@ -9,7 +9,7 @@ import abiFile from './Solove.json';
 import { MerkleTree } from 'merkletreejs';
 window.Buffer = window.Buffer || require("buffer").Buffer;
 const keccak256 = require('keccak256');
-
+const CONTRACT_ADDRESS = process.env.REACT_APP_CONTRACT_ADDRESS
 
 let addresses = [
   "0X5B38DA6A701C568545DCFCB03FCB875F56BEDDC4",
@@ -36,7 +36,8 @@ function Mint() {
   const [mintcnt, setMintcnt] = useState(1);
 
   const { writeAsync: mint, error: mintError } = useContractWrite({
-    addressOrName: "0xA58C589B1d06f4af76a97152431a1333A09Ac05f",
+    // @ts-ignore
+    addressOrName: CONTRACT_ADDRESS,
     contractInterface: abiFile,
     functionName: 'whitelistmint'
   });
@@ -81,7 +82,7 @@ function Mint() {
     if(mintedTokenId){
       Swal.fire(
           {
-            html:'Mint successful! You can view your NFT\n  <a target="_blank" href="https://testnets.opensea.io/assets/goerli/${CONTRACT_ADDRESS}/${mintedTokenId}"><p style="color:green">Click me!</p></a>',
+            html:'Mint successful! You can view your NFT\n  <a target="_blank" href={`https://testnets.opensea.io/assets/goerli/${CONTRACT_ADDRESS}/${mintedTokenId}`><p style="color:green">Click me!</p></a>',
             icon:'success',
           });
     }

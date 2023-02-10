@@ -1,5 +1,8 @@
 import {BsPlusCircleFill,BsFillXCircleFill } from 'react-icons/bs'
 import React, {useEffect, useState, useRef} from 'react';
+import mint from "./Mint";
+
+const PROJECT_NAME = process.env.REACT_APP_PROJECT_NAME
 
 function SnsLogo(){
     const [buttonState, SetButtonState] = useState<boolean>(false);     //false 시 close 된 상태 true 시 버튼이 나타나는 상태
@@ -28,7 +31,11 @@ function SnsLogo(){
         <div className="snsLogoContainer">
             <div style={{position:'relative',width:'auto'}}>
                 <ul className="openUl" ref={openUl} >
-                    <li><img src="/opensea.svg" alt='openseaLogo' /></li>
+                    <li>
+                        <a target="_blank" href={`https://testnets.opensea.io/collection/${PROJECT_NAME}`}>
+                            <img src="/opensea.svg" alt='openseaLogo' />
+                        </a>
+                    </li>
                     <li><img src="/twitter.svg" alt='twitterLogo' /> </li>
                     <li><img src="/discord.svg" alt='discordLogo' /> </li>
                     <li><div className="snsButton snsCloseButton" onClick={()=>SetButtonState(false)}><BsFillXCircleFill /></div></li>
