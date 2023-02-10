@@ -38,7 +38,7 @@ function Mint() {
   const [mintcnt, setMintcnt] = useState(1);
 
   const { writeAsync: mint, error: mintError } = useContractWrite({
-    addressOrName: "0x26b87BEca44B6311516FE5bc1b658787290f7fcA",
+    addressOrName: "0xA58C589B1d06f4af76a97152431a1333A09Ac05f",
     contractInterface: abiFile,
     functionName: 'whitelistmint'
   });
@@ -90,10 +90,9 @@ function Mint() {
     if(mintLoading){
       Swal.fire({
         text: 'Minting.. please wait ',
-        icon: 'info',
         toast: true,
         timerProgressBar: true,
-        timer:10000
+        timer:100000
       })
     }
   },[mintError, mintedTokenId, mintLoading])
