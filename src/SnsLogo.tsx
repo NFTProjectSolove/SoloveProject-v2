@@ -5,7 +5,6 @@ function SnsLogo(){
     const [buttonState, SetButtonState] = useState<boolean>(false);     //false 시 close 된 상태 true 시 버튼이 나타나는 상태
     const openUl = useRef<HTMLUListElement>(null);
     const closeUl = useRef<HTMLUListElement>(null);
-
     useEffect(()=>{
         if(buttonState){
             if(openUl.current && closeUl.current){

@@ -20,7 +20,7 @@ function MainHome(){
 
     return(
         <div className="tranPage">
-            <div style={{backgroundColor:'black', width:'100vw',height:'100vh', position:'relative', top:'0',overflow:'hidden'}}>
+            <div style={{backgroundColor:'black', width:'100%', height:'100%', position:'relative',overflow:'hidden'}}>
                 <div className="bigContainer">
                     <div className="imgContainer">
                         <span id="mainImg1"><Image alt='soloveimage1' length={30} src={"/Solove1.jpg"}></Image></span>
