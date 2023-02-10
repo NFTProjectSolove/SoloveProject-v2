@@ -38,7 +38,7 @@ function Mint() {
   const [mintcnt, setMintcnt] = useState(1);
 
   const { writeAsync: mint, error: mintError } = useContractWrite({
-    addressOrName: "0xB673922e9A7DF2d1a5166aa85c9241B31acB873f",
+    addressOrName: "0xA58C589B1d06f4af76a97152431a1333A09Ac05f",
     contractInterface: abiFile,
     functionName: 'whitelistmint'
   });
@@ -66,30 +66,33 @@ function Mint() {
       console.error(error);
     } finally {
       setMintLoading(false);
+      setMintedTokenId(0);
     }
   };
 
   useEffect(()=>{
     if(mintError){
       let json = JSON.stringify(mintError,['reason'],' ')
+      let second = json.substring(0,json.lastIndexOf('"'))
+      let third = second.substring(second.lastIndexOf('"')+1)
       Swal.fire({
-        html: json.substring(json.lastIndexOf(':')+1, json.lastIndexOf('"')),
+        html: third.substring(third.lastIndexOf(':')+1),
         icon:"error",
       })
     }
     if(mintedTokenId){
       Swal.fire(
-      {
-        html:'Mint successful! You can view your NFT\n  <a target="_blank" href="https://testnets.opensea.io/assets/goerli/${CONTRACT_ADDRESS}/${tokenId}"><p style="color:green">Click me!</p></a>',
-        icon:'success',
-      });
+          {
+            html:'Mint successful! You can view your NFT\n  <a target="_blank" href="https://testnets.opensea.io/assets/goerli/${CONTRACT_ADDRESS}/${tokenId}"><p style="color:green">Click me!</p></a>',
+            icon:'success',
+          });
     }
     if(mintLoading){
       Swal.fire({
-        text: 'Minting.. please wait ',
-        icon: 'info',
+        titleText:'Minting',
+        text: 'Please wait. . .',
         timerProgressBar: true,
-        timer:10000
+        timer:100000
       })
     }
   },[mintError, mintedTokenId, mintLoading])
