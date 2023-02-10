@@ -81,7 +81,7 @@ function Mint() {
     if(mintedTokenId){
       Swal.fire(
           {
-            html:'Mint successful! You can view your NFT\n  <a target="_blank" href="https://testnets.opensea.io/assets/goerli/${CONTRACT_ADDRESS}/${tokenId}"><p style="color:green">Click me!</p></a>',
+            html:'Mint successful! You can view your NFT\n  <a target="_blank" href="https://testnets.opensea.io/assets/goerli/${CONTRACT_ADDRESS}/${mintedTokenId}"><p style="color:green">Click me!</p></a>',
             icon:'success',
           });
     }
@@ -103,15 +103,15 @@ function Mint() {
   }, []);
 
   const Counter = () => {
-    const mintcntList = [1, 2, 3, 4, 5];
+    const mintcntList = [1, 2];
     const handleSelect = (e:any) => {
       setMintcnt(e.target.value);
     };
     return (
         <div className = "counterContainer">
           <div className="counterInfo1">
-            <span className="num"> 0.02 </span>
-            <span className="unit"> eth </span>
+            <span className="num"> 2 </span>
+            <span className="unit"> Per Wallet </span>
             <span>
             <select className="select" onChange={handleSelect} value={mintcnt}> 
               {mintcntList.map((item) => (
@@ -122,8 +122,8 @@ function Mint() {
           <div className="bar"></div>
           <div className="counterInfo2">
             <span className="label">TOTAL </span>
-            <span className="num"> {+mintcnt*0.02}</span>
-            <span className="unit">eth</span>
+            <span className="num"> {+mintcnt}</span>
+            <span className="unit">EA</span>
           </div>
         </div>
     );
@@ -136,6 +136,7 @@ function Mint() {
             <div className="mintcharactor">
               <img alt="char_solove" src="/mintcharactor.png" ></img>
             </div>
+            <a target="_blank" href="https://testnets.opensea.io/assets/goerli/${CONTRACT_ADDRESS}/${tokenId}"></a>
             <Counter/>
             <div className="buttonContainer">
               {!isConnected&&
