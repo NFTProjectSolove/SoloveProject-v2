@@ -89,8 +89,8 @@ function Mint() {
     }
     if(mintLoading){
       Swal.fire({
-        text: 'Minting.. please wait ',
-        toast: true,
+        titleText:'Minting',
+        text: 'Please wait. . .',
         timerProgressBar: true,
         timer:100000
       })
