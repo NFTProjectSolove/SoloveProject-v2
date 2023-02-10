@@ -55,7 +55,7 @@ contract SimpleNftLowerGas is ERC721, Ownable {
         return supply.current();
     }
 
-    function whitelistmint(uint256 _mintAmount, bytes32[] calldata _merkleProof) public mintCompliance(_mintAmount) {
+    function whitelistmint(uint256 _mintAmount, bytes32[] memory _merkleProof) public mintCompliance(_mintAmount) {
         require(!paused, "The contract is paused!");
         require(!public_mint, "Not Whitelist Minting period");
 

@@ -6,16 +6,14 @@ import {
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
-import { useAccount, useContractRead, useContractWrite} from 'wagmi';
+import { useAccount, useContractWrite} from 'wagmi';
 import abiFile from './Solove.json';
 import { MerkleTree } from 'merkletreejs';
-import { ethers } from 'ethers';
 window.Buffer = window.Buffer || require("buffer").Buffer;
-
 const keccak256 = require('keccak256');
 
 
-let whitelistAddresses = [
+let addresses = [
   "0X5B38DA6A701C568545DCFCB03FCB875F56BEDDC4",
   "0X5A641E5FB72A2FD9137312E7694D42996D689D99",
   "0XDCAB482177A592E424D1C8318A464FC922E8DE40",
@@ -24,32 +22,23 @@ let whitelistAddresses = [
   "0XCC4C29997177253376528C05D3DF91CF2D69061A",
   "0xdD870fA1b7C4700F2BD7f44238821C26f7392148",
   "0x2f9C64174Afa42C87da579Cb8DffD3bb1301b6D9",
-  "0x9aaB929c32B3CCe2ec0FdBbB21DdD070Fb359fb6"
+  "0x9aaB929c32B3CCe2ec0FdBbB21DdD070Fb359fb6",
+  "0x15979297a8B1a4e52294c9E21D5423EddB5Da5C4"
 ];
 
+const leaves = addresses.map(x => keccak256(x))
+const tree = new MerkleTree(leaves, keccak256, { sortPairs: true })
 
-const leafNodes = whitelistAddresses.map(addr => keccak256(addr));
-const merkleTree = new MerkleTree(leafNodes, keccak256);
+function buf2hex(x: any){
+  return '0x' + x.toString('hex')
+}
 
-
-const CONTRACT_ADDRESS = process.env.REACT_APP_CONTRACT_ADDRESS;
 
 function Mint() {
-  const contractConfig = {
-    addressOrName: CONTRACT_ADDRESS,
-    contractInterface: abiFile,
-  };
-
   const [mintcnt, setMintcnt] = useState(1);
 
-  // const { data: tokenURI } = useContractRead({
-  //   ...contractConfig,
-  //   functionName: 'notRevealedUri',
-  // });
-  const [imgURL, setImgURL] = useState('');
-
   const { writeAsync: mint, error: mintError } = useContractWrite({
-    addressOrName: "0x16eBA794fE1B433eE5B13977CE79E0fAfbE0eEd9",
+    addressOrName: "0xB673922e9A7DF2d1a5166aa85c9241B31acB873f",
     contractInterface: abiFile,
     functionName: 'whitelistmint'
   });
@@ -63,13 +52,11 @@ function Mint() {
   const onMintClick = async () => {
     try {
       setMintLoading(true);
-      const proof = merkleTree.getHexProof(keccak256(address));
-      console.log(mintcnt)
-      console.log(address)
-      console.log(proof)
+      const proof = tree.getProof(keccak256(address)).map(x => buf2hex(x.data))
       const tx = await mint({
-        args: [mintcnt, proof, { value: ethers.utils.parseEther(String(mintcnt*0.2))}],
+        args: [mintcnt, proof],
       });
+
       const receipt = await tx.wait();
       console.log('TX receipt', receipt);
       // @ts-ignore
@@ -84,8 +71,9 @@ function Mint() {
 
   useEffect(()=>{
     if(mintError){
+      let json = JSON.stringify(mintError,['reason'],' ')
       Swal.fire({
-        html: JSON.stringify(mintError,null,' '),
+        html: json.substring(json.lastIndexOf(':')+1, json.lastIndexOf('"')),
         icon:"error",
       })
     }
