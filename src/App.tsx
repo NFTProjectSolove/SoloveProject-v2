@@ -14,7 +14,7 @@ const App = () => {
     const location = useLocation();
 
 return (
-    <div style={{backgroundColor:'black', position:'absolute', top:'0' }}>
+    <div style={{backgroundColor:'black', position:'absolute', top:'0', width: '100%', height:'100%' }}>
         <Header/>
         <SnsLogo/>
         <Footer/>

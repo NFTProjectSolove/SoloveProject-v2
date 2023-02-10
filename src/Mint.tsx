@@ -1,7 +1,5 @@
 import {
   Button,
-  Text,
-  Link,
 } from '@chakra-ui/react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useEffect, useState } from 'react';
