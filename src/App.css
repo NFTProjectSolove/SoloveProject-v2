@@ -283,30 +283,24 @@ h2, p{
 
 /*SnsLogo */
 
-@keyframes rotateMenu {
+@keyframes growDownMenu {
   0% {
-    transform: rotateX(-90deg);
+    transform: scaleY(0);
     opacity:0;
   }
-  70% {
-    transform: rotateX(20deg)
-  }
   100% {
-    transform: rotateX(0deg);
+    transform: scaleY(1);
     opacity:1;
   }
 }
 
-@keyframes rotateMenuReverse {
+@keyframes growDownMenuReverse {
   0% {
-    transform: rotateX(90deg);
+    transform: scaleY(1);
     opacity:1;
   }
-  70% {
-    transform: rotateX(-20deg)
-  }
   100% {
-    transform: rotateX(0deg);
+    transform: scaleY(0);
     opacity:0;
   }
 }
@@ -316,15 +310,20 @@ h2, p{
   z-index: 5;
   display:flex;
   flex-direction: column;
+  align-items: end;
   bottom:40px;
   right:4vw;
 }
 
 .openUl{
-  display:none;
-  position:relative;
+  opacity:0;
+  position:absolute;
+  bottom:0;
 }
 
+.closeUl{
+  position:relative;
+}
 
 .snsLogoContainer li{
   list-style: none;
@@ -350,11 +349,13 @@ h2, p{
 }
 
 .snsAppear{
-  animation: rotateMenu 300ms ease-in-out forwards
+  animation: growDownMenu 200ms ease-in-out forwards;
+  transform-origin: bottom center;
 }
 
 .snsDisappear{
-  animation: rotateMenuReverse 300ms ease-in-out forwards
+  animation: growDownMenuReverse 200ms ease-in-out forwards;
+  transform-origin: bottom center;
 }
 
 @media(max-width: 1023px){

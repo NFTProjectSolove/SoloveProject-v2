@@ -9,15 +9,17 @@ function SnsLogo(){
     useEffect(()=>{
         if(buttonState){
             if(openUl.current && closeUl.current){
-                openUl.current.style.display='block'
-                closeUl.current.style.display='none'
+
+                closeUl.current.style.opacity='0'
+                openUl.current.classList.remove("snsDisappear")
                 openUl.current.classList.add("snsAppear")
             }
         }
         else{
             if(openUl.current && closeUl.current){
-                openUl.current.style.display='none'
-                closeUl.current.style.display='block'
+                closeUl.current.style.opacity='1'
+                openUl.current.classList.remove("snsAppear")
+                openUl.current.classList.add("snsDisappear")
             } 
         }  
             
@@ -25,16 +27,16 @@ function SnsLogo(){
 
     return(
         <div className="snsLogoContainer">
-            <div style={{position:'relative', width:'auto'}}>
+            <div style={{position:'relative',width:'auto'}}>
                 <ul className="openUl" ref={openUl} >
                     <li><img src="/opensea.svg" alt='openseaLogo' /></li>
                     <li><img src="/twitter.svg" alt='twitterLogo' /> </li>
                     <li><img src="/discord.svg" alt='discordLogo' /> </li>
                     <li><div className="snsButton snsCloseButton" onClick={()=>SetButtonState(false)}><BsFillXCircleFill /></div></li>
                 </ul>
-
+            
                 <ul className="closeUl" ref={closeUl}>
-                    <li><div className="snsButton snsOpenButton" onClick={()=>SetButtonState(true)}><BsPlusCircleFill /></div></li>
+                    <li><div className="snsButton snsOpenButton" onClick={()=>buttonState?SetButtonState(false):SetButtonState(true)}><BsPlusCircleFill /></div></li>
                 </ul>
                 
             </div>

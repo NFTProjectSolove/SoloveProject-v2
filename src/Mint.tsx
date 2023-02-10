@@ -88,7 +88,6 @@ function Mint() {
       Swal.fire({
         text: 'Minting.. please wait ',
         icon: 'info',
-        toast: true,
         timerProgressBar: true,
         timer:10000
       })
