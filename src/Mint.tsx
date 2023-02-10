@@ -38,7 +38,7 @@ function Mint() {
   const [mintcnt, setMintcnt] = useState(1);
 
   const { writeAsync: mint, error: mintError } = useContractWrite({
-    addressOrName: "0x94aA798F922E061cCF0d6d7033464efE5006d4E8",
+    addressOrName: "0xB673922e9A7DF2d1a5166aa85c9241B31acB873f",
     contractInterface: abiFile,
     functionName: 'whitelistmint'
   });
