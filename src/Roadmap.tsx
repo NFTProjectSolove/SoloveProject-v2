@@ -1,51 +1,46 @@
-import styled from '@material-ui/core/styles/styled';
 import { useState, useEffect } from 'react';
-import { Style } from 'util';
-
 
 function Roadmap(){
-
     function Map(){
-      
       const [hover, setHover] = useState<number>(0);
       const Bubble1 = document.getElementById('bubble1')
       const Bubble2 = document.getElementById('bubble2')
       const Bubble3 = document.getElementById('bubble3')
-      
+
       useEffect(
-        ()=>{
-          switch (hover) {
-            case 0:  
-              if(Bubble1 && Bubble2 && Bubble3){
-                Bubble1.style.display = 'none';
-                Bubble2.style.display = 'none';
-                Bubble3.style.display = 'none';
-              }    
-              break;
-            case 1:
-              if(Bubble1 && Bubble2 && Bubble3){
-                Bubble1.style.display = 'flex';
-                Bubble2.style.display = 'none';
-                Bubble3.style.display = 'none';
-              } 
-              break;
-            case 2:
-              if(Bubble1 && Bubble2 && Bubble3){
-                Bubble1.style.display = 'none';
-                Bubble2.style.display = 'flex';
-                Bubble3.style.display = 'none';
-              } 
+          ()=>{
+            switch (hover) {
+              case 0:
+                if(Bubble1 && Bubble2 && Bubble3){
+                  Bubble1.style.display = 'none';
+                  Bubble2.style.display = 'none';
+                  Bubble3.style.display = 'none';
+                }
                 break;
-            case 3:
-              if(Bubble1 && Bubble2 && Bubble3){
-                Bubble1.style.display = 'none';
-                Bubble2.style.display = 'none';
-                Bubble3.style.display = 'flex';
-              } 
-              break;
+              case 1:
+                if(Bubble1 && Bubble2 && Bubble3){
+                  Bubble1.style.display = 'flex';
+                  Bubble2.style.display = 'none';
+                  Bubble3.style.display = 'none';
+                }
+                break;
+              case 2:
+                if(Bubble1 && Bubble2 && Bubble3){
+                  Bubble1.style.display = 'none';
+                  Bubble2.style.display = 'flex';
+                  Bubble3.style.display = 'none';
+                }
+                break;
+              case 3:
+                if(Bubble1 && Bubble2 && Bubble3){
+                  Bubble1.style.display = 'none';
+                  Bubble2.style.display = 'none';
+                  Bubble3.style.display = 'flex';
+                }
+                break;
+            }
           }
-        }
-      ,[])
+          ,[hover])
       
       return(
         <>
@@ -1676,12 +1671,13 @@ function Roadmap(){
         </>
       )
     }
-    
+
     return(
       <div className="tranPage">
         <Map></Map>
       </div>
     )
-};
+
+}
 
 export default Roadmap;
