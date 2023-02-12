@@ -692,7 +692,6 @@ h2, p{
 
 .storyContainer p, .storyContainer h1{
   width: 100%;
-  text-align: center;
   font-family: 'Gotham Rounded', sans-serif;
 }
 
@@ -710,7 +709,7 @@ h2, p{
   color: white;
   font-weight: bold;
   margin-bottom: 0.5vh;
-
+  text-align: center;
 }
 
 .storySection1{
