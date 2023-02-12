@@ -30,7 +30,7 @@ function Story (){
           <Particles class="background" init={particlesInit} options={particlesOptions} style={{ position: 'absolute', width: '100%', height: '200vh', left: 0, top: 0, zIndex: -1}}/>
           <div className="storytext" style={{width:"100%"}}>
             <h1>Solove Universe</h1>
-            <img className="scrolldown" alt="scrolldown" src="/scrolldown.png" style={{filter:"invert(100%)", height: 'calc(17px + 1vw)', margin:"0 auto"}}/>
+            <img className="scrolldown" alt="scrolldown" src="/scrolldown.png" style={{filter:"invert(100%)", height: 'calc(17px + 1vw)', margin:"0 auto", opacity:"0.76"}}/>
           </div>
           <div className="storySection1">
             {scrollPosition >= 150 ? <Typingword typingText="In the vast universe, a new parallel world of our galaxy was born."></Typingword> : null}

@@ -697,6 +697,7 @@ h2, p{
 
 .storyContainer p{
   font-weight:lighter;
+  color: white;
 }
 
 .storytext{
@@ -719,7 +720,6 @@ h2, p{
   width: 30vw;
   margin-left: 13vw;
   position: absolute;
-  color: white;
 }
 
 .storySection2{
@@ -729,7 +729,6 @@ h2, p{
   width: 30vw;
   margin-left: 57vw;
   position: absolute;
-  color: white;
 }
 
 @keyframes rainbow-text-simple-animation-rev {
