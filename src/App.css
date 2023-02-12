@@ -1326,8 +1326,6 @@ h2, p{
   
   .select{
     font-size:14px;
-    text-align: center;
-    text-align-last: center;
   }
   .unit{
     font-size: 18px;
@@ -1374,8 +1372,7 @@ h2, p{
   
   .select{
     font-size:12px;
-    text-align: center;
-    text-align-last: center;
+    height: 30px;
   }
 
   .select option{
