@@ -696,6 +696,10 @@ h2, p{
   font-family: 'Gotham Rounded', sans-serif;
 }
 
+.storyContainer p{
+  font-weight:lighter;
+}
+
 .storytext{
   position: absolute;
   font-size: calc(15px + 1vw);
