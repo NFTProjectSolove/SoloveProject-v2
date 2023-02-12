@@ -1,51 +1,74 @@
-import styled from '@material-ui/core/styles/styled';
 import { useState, useEffect } from 'react';
-import { Style } from 'util';
-
 
 function Roadmap(){
-
     function Map(){
-      
       const [hover, setHover] = useState<number>(0);
       const Bubble1 = document.getElementById('bubble1')
       const Bubble2 = document.getElementById('bubble2')
       const Bubble3 = document.getElementById('bubble3')
-      
+      const Bubble4 = document.getElementById('bubble4')
+      const Bubble5 = document.getElementById('bubble5')
+
       useEffect(
         ()=>{
           switch (hover) {
             case 0:  
-              if(Bubble1 && Bubble2 && Bubble3){
+              if(Bubble1 && Bubble2 && Bubble3 && Bubble4 && Bubble5){
                 Bubble1.style.display = 'none';
                 Bubble2.style.display = 'none';
                 Bubble3.style.display = 'none';
+                Bubble4.style.display = 'none';
+                Bubble5.style.display = 'none';
               }    
               break;
             case 1:
-              if(Bubble1 && Bubble2 && Bubble3){
+              if(Bubble1 && Bubble2 && Bubble3 && Bubble4 && Bubble5){
                 Bubble1.style.display = 'flex';
                 Bubble2.style.display = 'none';
                 Bubble3.style.display = 'none';
+                Bubble4.style.display = 'none';
+                Bubble5.style.display = 'none';
               } 
               break;
             case 2:
-              if(Bubble1 && Bubble2 && Bubble3){
+              if(Bubble1 && Bubble2 && Bubble3&& Bubble4 && Bubble5){
                 Bubble1.style.display = 'none';
-                Bubble2.style.display = 'flex';
+                Bubble2.style.display = 'none';
                 Bubble3.style.display = 'none';
+                Bubble4.style.display = 'flex';
+                Bubble5.style.display = 'none';
               } 
                 break;
             case 3:
-              if(Bubble1 && Bubble2 && Bubble3){
+              if(Bubble1 && Bubble2 && Bubble3&& Bubble4 && Bubble5){
                 Bubble1.style.display = 'none';
-                Bubble2.style.display = 'none';
-                Bubble3.style.display = 'flex';
+                Bubble2.style.display = 'flex';
+                Bubble3.style.display = 'none';
+                Bubble4.style.display = 'none';
+                Bubble5.style.display = 'none';
               } 
               break;
+            case 4:
+            if(Bubble1 && Bubble2 && Bubble3&& Bubble4 && Bubble5){
+              Bubble1.style.display = 'none';
+              Bubble2.style.display = 'none';
+              Bubble3.style.display = 'none';
+              Bubble4.style.display = 'none';
+              Bubble5.style.display = 'flex';
+            } 
+            break;
+            case 5:
+            if(Bubble1 && Bubble2 && Bubble3&& Bubble4 && Bubble5){
+              Bubble1.style.display = 'none';
+              Bubble2.style.display = 'none';
+              Bubble3.style.display = 'flex';
+              Bubble4.style.display = 'none';
+              Bubble5.style.display = 'none';
+            } 
+            break;
           }
         }
-      ,[])
+      ,[hover])
       
       return(
         <>
@@ -1658,6 +1681,7 @@ function Roadmap(){
         </div>
         
         </div>
+        </div>
           <div style={{position : "relative"}}>
           <div id="bubble1">
               <button className='bubblebutton' onClick = {() => setHover(0)}>x</button>
@@ -1671,17 +1695,25 @@ function Roadmap(){
           <button className='bubblebutton' onClick = {() => setHover(0)}>x</button>
               <p>roadmap3:</p>
           </div>
-        </div>
+          <div id="bubble4">
+          <button className='bubblebutton' onClick = {() => setHover(0)}>x</button>
+              <p>roadmap4:</p>
+          </div>
+          <div id="bubble5">
+          <button className='bubblebutton' onClick = {() => setHover(0)}>x</button>
+              <p>roadmap5:</p>
+          </div>
         </div>
         </>
       )
     }
-    
+
     return(
       <div className="tranPage">
         <Map></Map>
       </div>
     )
-};
+
+}
 
 export default Roadmap;
