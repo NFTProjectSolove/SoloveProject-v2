@@ -9,6 +9,7 @@ function Roadmap(){
       const Bubble4 = document.getElementById('bubble4')
       const Bubble5 = document.getElementById('bubble5')
 
+
       useEffect(
         ()=>{
           switch (hover) {
@@ -19,7 +20,8 @@ function Roadmap(){
                 Bubble3.style.display = 'none';
                 Bubble4.style.display = 'none';
                 Bubble5.style.display = 'none';
-              }    
+              }
+                  
               break;
             case 1:
               if(Bubble1 && Bubble2 && Bubble3 && Bubble4 && Bubble5){
@@ -1678,6 +1680,11 @@ function Roadmap(){
                   c1.857,0,3.373-1.414,3.373-3.146C584.618,277.82,583.103,276.412,581.245,276.412"/>
             </g>
             </svg>
+            <div className='continent1' onClick={() => setHover(1)}></div>
+            <div className='continent2' onClick={() => setHover(3)}></div>
+            <div className='continent3' onClick={() => setHover(2)}></div>
+            <div className='continent4' onClick={() => setHover(5)}></div>
+            <div className='continent5' onClick={() => setHover(4)}></div>
         </div>
         
         </div>
