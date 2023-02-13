@@ -764,10 +764,56 @@ h2, p{
 .main { 
   width: 60vh; 
   height: 60vh; 
-  display: flex; 
+  display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
 }
+
+
+.continent1{
+  width : 150px;
+  height: 100px;
+  display: flex;
+  top : -45%;
+  position: relative;
+}
+.continent2{
+  width : 100px;
+  height: 150px;
+  display: flex;
+  top : -45%;
+  left : 10%;
+  position: relative;
+
+}
+.continent3{
+  width : 180px;
+  height: 100px;
+  display: flex;
+  top : -95%;
+  left : 50%;
+  position: relative;
+
+}
+.continent4{
+  width : 80px;
+  height: 100px;
+  display: flex;
+  top : -95%;
+  left : 40%;
+  position: relative;
+  z-index: 6;
+}
+.continent5{
+  width : 80px;
+  height: 80px;
+  display: flex;
+  top : -105%;
+  left : 80%;
+  position: relative;
+  z-index: 6;
+}
+
 
 .worldcircle{
   width: 60vh; 
@@ -883,10 +929,10 @@ h2, p{
   width : 100%;
   height: 100%; 
   max-width: 60vw;
+  position: relative;
   margin-top: 22vh;
   margin-left : 2vw;
   z-index: 2;
-
 }
 
 
@@ -898,7 +944,6 @@ h2, p{
 .Roadmap1{
   fill : rgb(59, 179, 250);
 }
-
 
 .Roadmap1:hover{
   animation-name: roadmapani1;
@@ -1068,6 +1113,74 @@ h2, p{
     height: 20vh;
     left: 0vw;
   }
+  .continent1{
+    width : 140px;
+    height: 80px;
+    top : -45%;
+  }
+  .continent2{
+    width : 80px;
+    height: 120px;
+    top : -35%;
+    left : 12%;
+  }
+
+  .continent3{
+    width : 180px;
+    height: 100px;
+    top : -77%;
+    left : 55%;
+  }
+  .continent4{
+    width : 80px;
+    height: 100px;
+    top : -75%;
+    left : 45%;
+  }
+  .continent5{
+    width : 80px;
+    height: 80px;
+    top : -85%;
+    left : 80%;
+    z-index: 6;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .continent1{
+    width : 130px;
+    height: 80px;
+    display: flex;
+    top : -45%;
+    position: relative;
+  }
+  .continent2{
+    width : 80px;
+    height: 120px;
+    top : -45%;
+    left : 10%;
+  }
+  .continent3{
+    width : 120px;
+    height: 70px;
+    top : -95%;
+    left : 55%;
+  }
+  .continent4{
+    width : 80px;
+    height: 100px;
+    top : -95%;
+    left : 40%;
+    z-index: 6;
+  }
+  .continent5{
+    width : 60px;
+    height: 60px;
+    top : -110%;
+    left : 80%;
+    z-index: 6;
+  }
+
 }
 
 
