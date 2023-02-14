@@ -35,7 +35,7 @@ function Header(){
       <div id="header">
         <div className="navbar">
           <GiHamburgerMenu className="navbarHamburger" color="white" onClick={toggleClick} />
-          <div className="navbarLogo" onClick={()=>{Navigate('/', {replace:true})}}>
+          <div className="navbarLogo" onClick={()=>{Navigate('/', {replace:true})}} style={{cursor:"pointer"}}>
             <img className="navLogoImg" src="/solovelogo.svg" alt="LogoWithText"/>
             <img className="navOnlyLogoImg" src="/icon.png" alt="Logo" />
           </div>
