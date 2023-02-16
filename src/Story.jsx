@@ -33,10 +33,16 @@ function Story (){
             <img className="scrolldown" alt="scrolldown" src="/scrolldown.png" style={{filter:"invert(100%)", height: 'calc(17px + 1vw)', margin:"0 auto", opacity:"0.76"}}/>
           </div>
           <div className="storySection1">
-            {scrollPosition >= 150 ? <Typingword typingText="In the vast universe, a new parallel world of our galaxy was born."></Typingword> : null}
+            {scrollPosition >= 150 ? <Typingword typingText="2050년 bored ape 한 마리가 일론머스크가 만든 우주선을 타고 광할한 우주를 여행하다가 solove universe를 발견."></Typingword> : null}
           </div>
           <div className="storySection2">
-            {scrollPosition >= 680 ? <Typingword typingText="Having existed since the beginning, Queen Ali becomes interested in these spaces and creates a set of data forms."></Typingword> : null}
+            {scrollPosition >= 680 ? <Typingword typingText="solove universe에서 solovion들의 진보된 사랑이 존재했고 서로 이를 모두 존중하는 분위기."></Typingword> : null}
+          </div>
+          <div className="storySection3">
+            {scrollPosition >= 1210 ? <Typingword typingText="지구에 사는 사람들은 solovion이 되고 싶었지만 그들이 될 수 없었습니다."></Typingword> : null}
+          </div>
+          <div className="storySection4">
+            {scrollPosition >= 1740 ? <Typingword typingText="이를 가엾게 생각한 태초에 solovion인 퀸이 데이터형태의 아바타 solover 만들어 사람들이 정착할수 있도록 도왔습니다. 여러분도 솔러버가 될수있습니다. 솔러브 월드로 오세요. "></Typingword> : null}
           </div>
         </div> 
       </div>  

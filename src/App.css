@@ -328,13 +328,13 @@ h2, p{
 }
 
 .snsLogoContainer img{
-  width:70px;
-  height:70px;
+  width:calc(30px + 2vw);
+  height:calc(30px + 2vw);
 }
 
 .snsLogoContainer svg{
-  width:70px;
-  height:70px;
+  width:calc(30px + 2vw);
+  height:calc(30px + 2vw);
   color: white;
   border-radius: 100%;
 }
@@ -359,31 +359,15 @@ h2, p{
     right:2vw;
   }
 
-  .snsLogoContainer img{
-    width:60px;
-    height:60px;
-  }
-  
-  .snsLogoContainer svg{
-    width:60px;
-    height:60px;
-  }
 }
 
 @media(max-width: 479px){
   .snsLogoContainer{
-    bottom:80px;
+    bottom:30px;
     right:5vw;
-  }
-
-  .snsLogoContainer img{
-    width:50px;
-    height:50px;
   }
   
   .snsLogoContainer svg{
-    width:50px;
-    height:50px;
     color: white;
     border-radius: 100%;
   }
@@ -686,7 +670,7 @@ h2, p{
 /* story CSS */
 .storyContainer{
   width: 100vw;
-  height: 200vh;
+  height: 280vh;
   background-color: transparent;
 }
 
@@ -724,6 +708,24 @@ h2, p{
 
 .storySection2{
   margin-top: 140vh;
+  font-size:calc(12px + 0.8vw);
+  height: 10vh;
+  width: 30vw;
+  margin-left: 57vw;
+  position: absolute;
+}
+
+.storySection3{
+  margin-top: 180vh;
+  font-size:calc(12px + 0.8vw);
+  height: 10vh;
+  width: 30vw;
+  margin-left: 13vw;
+  position: absolute;
+}
+
+.storySection4{
+  margin-top: 220vh;
   font-size:calc(12px + 0.8vw);
   height: 10vh;
   width: 30vw;

@@ -1692,23 +1692,24 @@ function Roadmap(){
           <div style={{position : "relative"}}>
           <div id="bubble1">
               <button className='bubblebutton' onClick = {() => setHover(0)}>x</button>
-              <p>roadmap1:</p>
+              <p>roadmap1: gensis minting
+              </p>
           </div>
           <div id="bubble2">
             <button className='bubblebutton' onClick = {() => setHover(0)}>x</button>
-              <p>roadmap2:</p>
+              <p>roadmap2: Big collaboration</p>
             </div>
           <div id="bubble3">
           <button className='bubblebutton' onClick = {() => setHover(0)}>x</button>
-              <p>roadmap3:</p>
+              <p>roadmap3: baby NFT</p>
           </div>
           <div id="bubble4">
           <button className='bubblebutton' onClick = {() => setHover(0)}>x</button>
-              <p>roadmap4:</p>
+              <p>roadmap4: metaverse</p>
           </div>
           <div id="bubble5">
           <button className='bubblebutton' onClick = {() => setHover(0)}>x</button>
-              <p>roadmap5:</p>
+              <p>roadmap5: unicode</p>
           </div>
         </div>
         </>
