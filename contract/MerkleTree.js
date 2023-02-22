@@ -19,6 +19,7 @@ const rootHash = tree.getRoot();
 const buf2hex = x => '0x' + x.toString('hex')
 
 console.log(buf2hex(tree.getRoot()))
-const leaf = keccak256("0XCC4C29997177253376528C05D3DF91CF2D69061A");
+const leaf = keccak256("0x9aaB929c32B3CCe2ec0FdBbB21DdD070Fb359fb6");
 const proof = tree.getProof(leaf).map(x => buf2hex(x.data))
+console.log(proof)
 console.log(tree.verify(proof, leaf, rootHash));
