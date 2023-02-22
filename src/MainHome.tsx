@@ -31,7 +31,7 @@ function MainHome(){
                         <h1>Welcome to</h1>
                         <img src="/solovewhite.png" alt="Solove" width='60%'></img>
                         <p>Solove Supports all the loves in the world. </p>
-                        <p>It's a place where anyone who believed in the power of love and acceptance could come together to connect, express themselves, and support one another.</p>
+                        <p>It's a place where anyone who respect each other without discrimination could come together to connect, express themselves, and support one another.</p>
                         <p>Join our world and create a new relationship.</p>
                         <div className="mainButtonContainer">
                             <StyledButton className="shopButton" type="submit" formTarget='_blank' href="https://opensea.io">Click to shop ➠</StyledButton>

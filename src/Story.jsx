@@ -42,7 +42,7 @@ function Story (){
             {scrollPosition >= 1210 ? <Typingword typingText="As news of the Solovion's equitable and loving world spread to Earth, people who have felt uncomfortable expressing themselves openly became interested in becoming Solovions. However, becoming a Solovion required more than just a desire or intention."></Typingword> : null}
           </div>
           <div className="storySection4">
-            {scrollPosition >= 1740 ? <Typingword typingText="To address this, the Solovion Queen, in her wisdom, created the form of a data avatar called Solover for people to settle into. People who settled into their avatar connected with others from all over the world who shared their values and beliefs. They knew that together, they could build a better future for all. So, they urged others to join them in the Solove Universe, to become Solovers and be a part of this groundbreaking new movement."></Typingword> : null}
+            {scrollPosition >= 1740 ? <Typingword typingText="To address this, the Solovion Queen, in her wisdom, created the form of a data avatar called Solover for people to settle into. People who inhabiting to their avatar connected with others from all over the world who shared their values and beliefs. They knew that together, they could build a better future for all. So, they urged others to join them in the Solove Universe, to become Solovers and be a part of this groundbreaking new movement."></Typingword> : null}
           </div>
         </div> 
       </div>  

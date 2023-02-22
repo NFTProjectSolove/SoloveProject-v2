@@ -15,7 +15,7 @@ contract SimpleNftLowerGas is ERC721, Ownable {
 
     // For WL
     bytes32 immutable public merkleRoot;
-    mapping(address => bool) public whitelistClaimed;
+    mapping(address => bool) public allowlistClaimed;
     mapping(address => bool) public publicClaimed;
 
     // For minting
@@ -55,16 +55,16 @@ contract SimpleNftLowerGas is ERC721, Ownable {
         return supply.current();
     }
 
-    function whitelistmint(uint256 _mintAmount, bytes32[] memory _merkleProof) public mintCompliance(_mintAmount) {
+    function allowlistmint(uint256 _mintAmount, bytes32[] memory _merkleProof) public mintCompliance(_mintAmount) {
         require(!paused, "The contract is paused!");
-        require(!public_mint, "Not Whitelist Minting period");
+        require(!public_mint, "Not Allowlist Minting period");
 
         // WL parts
-        require(!whitelistClaimed[msg.sender], "Address already claimed");
+        require(!allowlistClaimed[msg.sender], "Address already claimed");
         bytes32 leaf = keccak256(abi.encodePacked(msg.sender));
         require(MerkleProof.verify(_merkleProof, merkleRoot, leaf), "Invalid Merkle Proof."
         );
-        whitelistClaimed[msg.sender] = true;
+        allowlistClaimed[msg.sender] = true;
         //
 
 
