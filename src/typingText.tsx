@@ -23,7 +23,7 @@ export default function Typingword({typingText}: propsType) {
 
         return result;
       });
-    }, 60);
+    }, 50);
 
     return () => {
       clearInterval(typingInterval);

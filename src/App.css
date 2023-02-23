@@ -92,17 +92,6 @@ h2, p{
   }
 }
 
-/* @keyframes unload{
-  0%{
-    opacity: 1;
-    transform: translateY(0px);
-  }
-  100%{
-    opacity: 0;
-    transform: translateY(30px)
-  }
-} */
-
 /*Heder */
 
 .active p{
@@ -328,20 +317,21 @@ h2, p{
 }
 
 .snsLogoContainer img{
-  width:calc(30px + 2vw);
-  height:calc(30px + 2vw);
+  width:calc(30px + 1.8vw);
+  height:calc(30px + 1.8vw);
 }
 
 .snsLogoContainer svg{
-  width:calc(30px + 2vw);
-  height:calc(30px + 2vw);
-  color: white;
+  width:calc(30px + 1.8vw);
+  height:calc(30px + 1.8vw);
+  color: black;
+  border: rgb(120, 239, 199) 2px solid;
   border-radius: 100%;
 }
 
 .snsButton{
   border-radius: 100%;
-  background-color: #000000;
+  background-color: rgb(120, 239, 199);
 }
 
 .snsAppear{
@@ -368,7 +358,6 @@ h2, p{
   }
   
   .snsLogoContainer svg{
-    color: white;
     border-radius: 100%;
   }
 }
@@ -394,7 +383,7 @@ h2, p{
 
 .textContainer{
   width:40%;
-  padding: 9vw 2vw;
+  padding: 3vw 2vw;
 }
 
 .textContainer h1{
@@ -421,7 +410,7 @@ h2, p{
 }
 
 .textContainer p{
-  margin-top:3vw;
+  margin-top:1.8vw;
   font-size: 1.5vw;
 }
 
@@ -670,7 +659,7 @@ h2, p{
 /* story CSS */
 .storyContainer{
   width: 100vw;
-  height: 280vh;
+  height: 310vh;
   background-color: transparent;
 }
 
@@ -732,6 +721,35 @@ h2, p{
   margin-left: 57vw;
   position: absolute;
 }
+
+@media screen and (max-width:767px) {
+
+  .storyContainer{
+    height: 360vh;
+  }
+
+  .storySection1, .storySection2, .storySection3, .storySection4 {
+    width: 100vw;
+    margin-left: 0vw;
+    margin-right: 0vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+
+  .storySection2 {
+    margin-top: 160vh;
+  }
+
+  .storySection3 {
+    margin-top: 220vh;
+  }
+
+  .storySection4 {
+    margin-top: 280vh;
+  }
+
+}
+
 
 @keyframes rainbow-text-simple-animation-rev {
     0% {
