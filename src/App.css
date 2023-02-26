@@ -418,7 +418,7 @@ h2, p{
   width: 12vw;
   position:relative;
   white-space: nowrap;
-  margin-top:20px;
+  top:20px;
   
 }
 
@@ -464,7 +464,8 @@ h2, p{
     position: relative;
     width: 90%;
     text-align: center;
-    top: calc(-7vw + 20px);
+    top: calc(-7vw + 80px);
+    margin-bottom: 50px;
   }
 
   .textContainer h1{
@@ -473,7 +474,7 @@ h2, p{
   }
 
   .textContainer p{
-    font-size: 30px;
+    font-size: 28px;
   }
 
   #mainImg1 img{
@@ -498,6 +499,7 @@ h2, p{
   }
 
   .shopButton{
+    top:10px;
     width: 22vw;
   }
 } 
@@ -520,7 +522,7 @@ h2, p{
     display:block;
     text-align: center;
     top: calc(-7vw + 20px);
-    
+    margin-bottom: 20px;
   }
 
   .textContainer img{
