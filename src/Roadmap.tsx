@@ -1686,23 +1686,23 @@ function Roadmap(){
         </div>
         </div>
           <div style={{position : "relative"}}>
-          <div id="bubble1">
+          <div id="bubble1" className="roadmapAnimation">
               <button className='bubblebutton' onClick = {() => setHover(0)}>x</button>
               <img src="/Roadmap1.png" id = "Roadmapimg" width='auto'></img>
           </div>
-          <div id="bubble2">
+          <div id="bubble2" className="roadmapAnimation">
             <button className='bubblebutton' onClick = {() => setHover(0)}>x</button>
             <img src="/Roadmap2.png" id = "Roadmapimg" width='auto'></img>
             </div>
-          <div id="bubble3">
+          <div id="bubble3" className="roadmapAnimation">
           <button className='bubblebutton' onClick = {() => setHover(0)}>x</button>
           <img src="/Roadmap3.png" id = "Roadmapimg" width='auto'></img>
           </div>
-          <div id="bubble4">
+          <div id="bubble4" className="roadmapAnimation">
           <button className='bubblebutton' onClick = {() => setHover(0)}>x</button>
           <img src="/Roadmap4.png" id = "Roadmapimg" width='auto'></img>
           </div>
-          <div id="bubble5">
+          <div id="bubble5" className="roadmapAnimation">
           <button className='bubblebutton' onClick = {() => setHover(0)}>x</button>
           <img src="/unicode.png" id = "Roadmapimg" width='auto'></img>
 

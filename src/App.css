@@ -912,10 +912,6 @@ h2, p{
   z-index: 2;
 }
 
-
-
-
-
 .worldmap > svg { width: 100%; background: none; position: relative}
 
 .Roadmap1{
@@ -1016,6 +1012,19 @@ h2, p{
   100%{
     fill: rgb(196, 222, 236);
   }
+}
+
+@keyframes roadmapAppear{
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+}
+
+.roadmapAnimation{
+  animation: 1s ease roadmapAppear forwards;
 }
 
 .bubblebutton{
