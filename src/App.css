@@ -792,51 +792,6 @@ h2, p{
 }
 
 
-.continent1{
-  width : 150px;
-  height: 100px;
-  display: flex;
-  top : -45%;
-  position: relative;
-}
-.continent2{
-  width : 100px;
-  height: 150px;
-  display: flex;
-  top : -45%;
-  left : 10%;
-  position: relative;
-
-}
-.continent3{
-  width : 180px;
-  height: 100px;
-  display: flex;
-  top : -95%;
-  left : 50%;
-  position: relative;
-
-}
-.continent4{
-  width : 80px;
-  height: 100px;
-  display: flex;
-  top : -95%;
-  left : 40%;
-  position: relative;
-  z-index: 6;
-}
-.continent5{
-  width : 80px;
-  height: 80px;
-  display: flex;
-  top : -105%;
-  left : 80%;
-  position: relative;
-  z-index: 6;
-}
-
-
 .worldcircle{
   width: 60vh; 
   height: 60vh; 
@@ -965,6 +920,8 @@ h2, p{
 
 .Roadmap1{
   fill : rgb(59, 179, 250);
+  stroke : rgb(59, 179, 250);
+  stroke-width: 3;
 }
 
 .Roadmap1:hover{
@@ -976,8 +933,9 @@ h2, p{
 
 
 .Roadmap2{
-  fill : none;
+  fill : rgb(196, 222, 236);
   stroke: rgb(196, 222, 236);
+  stroke-width: 3;
 }
 
 .Roadmap2:hover{
@@ -988,8 +946,9 @@ h2, p{
 }
 
 .Roadmap3{
-  fill : none;
+  fill : rgb(110, 145, 163);
   stroke: rgb(110, 145, 163);
+  stroke-width: 3;
 }
 
 .Roadmap3:hover{
@@ -1000,10 +959,9 @@ h2, p{
 }
 
 .Roadmap4{
-
-  fill: rgb(190, 212, 224);
-  stroke: none;
-
+  fill: rgb(151, 156, 158);
+  stroke: rgb(151, 156, 158);
+  stroke-width: 3;
 }
 
 .Roadmap4:hover{
@@ -1015,6 +973,8 @@ h2, p{
 
 .Roadmap5{
   fill: rgb(69, 138, 175);
+  stroke: rgb(69, 138, 175);
+  stroke-width: 3;
 }
 
 .Roadmap5:hover{
@@ -1029,33 +989,6 @@ h2, p{
   position: absolute;
   top: 15vh;
   
-}
-
-#b1, #b2, #b3, #b4, #b5{
-  width: 10px;
-  height: 10px;
-  margin: 2px;
-  border-radius: 50%;
-  position: relative;
-  margin-top: 10vh;
-}
-#b1{
-  background-color: rgb(59, 179, 250);
-}
-#b2{
-  background-color: none;
-  border: solid rgb(110, 145, 163);
-}
-#b3{
-  background-color: rgb(69, 138, 175);
-}
-
-#b4{
-  background-color: none;
-  border: solid rgb(190, 212, 224);
-}
-#b5{
-  background-color: rgb(190, 212, 224);
 }
 
 
@@ -1085,6 +1018,9 @@ h2, p{
   }
 }
 
+.bubblebutton{
+  font-size: 1vw;
+}
 
 #bubble1, #bubble2, #bubble3, #bubble4, #bubble5{
   width : 50vw;
@@ -1098,13 +1034,32 @@ h2, p{
   bottom: 0;
   display: none;
   margin: auto;
-  background: black;
   border: 2px solid rgb(120, 239, 199);
   border-radius: 10px;
   z-index: 4;
-  text-align: center;
+  align-items: center;
+}
+#bubble1 {
+  background: linear-gradient(to right, rgb(53, 106, 134) 0%, rgb(196, 222, 236) 50%, rgb(53, 106, 134));
+}
+#bubble2 {
+  background: linear-gradient(to right, rgb(112, 141, 156) 0%, rgb(196, 222, 236) 50%, rgb(112, 141, 156));
+}
+#bubble3 {
+  background: linear-gradient(to right, rgb(69, 138, 175) 0%, rgb(196, 222, 236) 50%, rgb(69, 138, 175));
+}
+#bubble4 {
+  background: linear-gradient(to right, rgb(112, 141, 156) 0%, rgb(196, 222, 236) 50%, rgb(112, 141, 156));
+}
+#bubble5 {
+  background: rgb(195, 0, 255);
 }
 
+
+#Roadmapimg{
+  height : 80%;
+  max-width: 9  0%;
+}
 
 @keyframes gradient {
    0% {
@@ -1135,76 +1090,8 @@ h2, p{
     height: 20vh;
     left: 0vw;
   }
-  .continent1{
-    width : 140px;
-    height: 80px;
-    top : -45%;
-  }
-  .continent2{
-    width : 80px;
-    height: 120px;
-    top : -35%;
-    left : 12%;
-  }
-
-  .continent3{
-    width : 180px;
-    height: 100px;
-    top : -77%;
-    left : 55%;
-  }
-  .continent4{
-    width : 80px;
-    height: 100px;
-    top : -75%;
-    left : 45%;
-  }
-  .continent5{
-    width : 80px;
-    height: 80px;
-    top : -85%;
-    left : 80%;
-    z-index: 6;
-  }
+  
 }
-
-@media screen and (max-width:767px) {
-  .continent1{
-    width : 130px;
-    height: 80px;
-    display: flex;
-    top : -45%;
-    position: relative;
-  }
-  .continent2{
-    width : 80px;
-    height: 120px;
-    top : -45%;
-    left : 10%;
-  }
-  .continent3{
-    width : 120px;
-    height: 70px;
-    top : -95%;
-    left : 55%;
-  }
-  .continent4{
-    width : 80px;
-    height: 100px;
-    top : -95%;
-    left : 40%;
-    z-index: 6;
-  }
-  .continent5{
-    width : 60px;
-    height: 60px;
-    top : -110%;
-    left : 80%;
-    z-index: 6;
-  }
-
-}
-
 
 /* FAQ CSS */
 
