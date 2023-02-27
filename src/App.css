@@ -991,33 +991,6 @@ h2, p{
   
 }
 
-#b1, #b2, #b3, #b4, #b5{
-  width: 10px;
-  height: 10px;
-  margin: 2px;
-  border-radius: 50%;
-  position: relative;
-  margin-top: 10vh;
-}
-#b1{
-  background-color: rgb(59, 179, 250);
-}
-#b2{
-  background-color: none;
-  border: solid rgb(110, 145, 163);
-}
-#b3{
-  background-color: rgb(69, 138, 175);
-}
-
-#b4{
-  background-color: none;
-  border: solid rgb(190, 212, 224);
-}
-#b5{
-  background-color: rgb(190, 212, 224);
-}
-
 
 @keyframes roadmapani1{
   0% {
@@ -1045,6 +1018,9 @@ h2, p{
   }
 }
 
+.bubblebutton{
+  font-size: 1vw;
+}
 
 #bubble1, #bubble2, #bubble3, #bubble4, #bubble5{
   width : 50vw;
@@ -1058,13 +1034,32 @@ h2, p{
   bottom: 0;
   display: none;
   margin: auto;
-  background: black;
   border: 2px solid rgb(120, 239, 199);
   border-radius: 10px;
   z-index: 4;
-  text-align: center;
+  align-items: center;
+}
+#bubble1 {
+  background: linear-gradient(to right, rgb(53, 106, 134) 0%, rgb(196, 222, 236) 50%, rgb(53, 106, 134));
+}
+#bubble2 {
+  background: linear-gradient(to right, rgb(112, 141, 156) 0%, rgb(196, 222, 236) 50%, rgb(112, 141, 156));
+}
+#bubble3 {
+  background: linear-gradient(to right, rgb(69, 138, 175) 0%, rgb(196, 222, 236) 50%, rgb(69, 138, 175));
+}
+#bubble4 {
+  background: linear-gradient(to right, rgb(112, 141, 156) 0%, rgb(196, 222, 236) 50%, rgb(112, 141, 156));
+}
+#bubble5 {
+  background: rgb(195, 0, 255);
 }
 
+
+#Roadmapimg{
+  height : 80%;
+  max-width: 9  0%;
+}
 
 @keyframes gradient {
    0% {

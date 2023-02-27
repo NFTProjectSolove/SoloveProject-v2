@@ -1681,11 +1681,6 @@ function Roadmap(){
                   c1.857,0,3.373-1.414,3.373-3.146C584.618,277.82,583.103,276.412,581.245,276.412"/>
             </g>
             </svg>
-            <div className='continent1' onClick={() => setHover(1)}></div>
-            <div className='continent2' onClick={() => setHover(3)}></div>
-            <div className='continent3' onClick={() => setHover(2)}></div>
-            <div className='continent4' onClick={() => setHover(5)}></div>
-            <div className='continent5' onClick={() => setHover(4)}></div>
         </div>
         
         </div>
@@ -1693,24 +1688,24 @@ function Roadmap(){
           <div style={{position : "relative"}}>
           <div id="bubble1">
               <button className='bubblebutton' onClick = {() => setHover(0)}>x</button>
-              <p>roadmap1: gensis minting
-              </p>
+              <img src="/Roadmap1.png" id = "Roadmapimg" width='auto'></img>
           </div>
           <div id="bubble2">
             <button className='bubblebutton' onClick = {() => setHover(0)}>x</button>
-              <p>roadmap2: Big collaboration</p>
+            <img src="/Roadmap2.png" id = "Roadmapimg" width='auto'></img>
             </div>
           <div id="bubble3">
           <button className='bubblebutton' onClick = {() => setHover(0)}>x</button>
-              <p>roadmap3: baby NFT</p>
+          <img src="/Roadmap3.png" id = "Roadmapimg" width='auto'></img>
           </div>
           <div id="bubble4">
           <button className='bubblebutton' onClick = {() => setHover(0)}>x</button>
-              <p>roadmap4: metaverse</p>
+          <img src="/Roadmap4.png" id = "Roadmapimg" width='auto'></img>
           </div>
           <div id="bubble5">
           <button className='bubblebutton' onClick = {() => setHover(0)}>x</button>
-              <p>roadmap5: unicode</p>
+          <img src="/unicode.png" id = "Roadmapimg" width='auto'></img>
+
           </div>
         </div>
         </>
