@@ -41,11 +41,6 @@
                                 <img src="/twitter.svg" alt='twitterLogo' />
                             </a>
                         </li>
-                        <li>
-                            <a target="_blank" rel='noreferrer' href={`https://discord.gg/solove`}>
-                                <img src="/discord.svg" alt='discordLogo' />
-                            </a> 
-                        </li>
                         <li><div className="snsButton snsCloseButton" onClick={()=>SetButtonState(false)}><BsFillXCircleFill /></div></li>
                     </ul>
                 

@@ -64,9 +64,7 @@ export default function Appa({questiontext, answertext1, answertext2, answertext
                 <p>
                   <a href="twitter.com/solove">{answertext3}</a>
                 </p>
-                <p>
-                  <a href="discord.gg/solove">{answertext4}</a>
-                </p>
+                <p>{answertext4}</p>
                 <p>{answertext5}</p>
                 <p>{answertext6}</p>
                 <p>{answertext7}</p>
