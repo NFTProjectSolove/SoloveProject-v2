@@ -37,7 +37,7 @@ function Mint() {
   const isConnected = !!address;
   const [mintedTokenId, setMintedTokenId] = useState<string|number>(0);
   const [isDisabledByDate, setIsDisabledByDate] = useState<boolean>(true);
-  const disabledDate = '2023-02-26T05:20:00Z';  //mint 날짜 넣어주면 됨 입력된 날짜에 열림 시간은 영국시간 기준
+  const disabledDate = '2023-04-08T011:00:00Z';  //mint 날짜 넣어주면 됨 입력된 날짜에 열림 시간은 영국시간 기준
 
   const onMintClick = async () => {
     try {
