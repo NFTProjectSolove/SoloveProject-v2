@@ -1049,16 +1049,16 @@ h2, p{
   align-items: center;
 }
 #bubble1 {
-  background: linear-gradient(to right, rgb(53, 106, 134) 0%, rgb(196, 222, 236) 50%, rgb(53, 106, 134));
+  background: linear-gradient(to right, rgb(53, 106, 134) 0%, rgb(196, 222, 236) 100%);
 }
 #bubble2 {
-  background: linear-gradient(to right, rgb(112, 141, 156) 0%, rgb(196, 222, 236) 50%, rgb(112, 141, 156));
+  background: linear-gradient(to right, rgb(112, 141, 156) 0%, rgb(196, 222, 236) 100%);
 }
 #bubble3 {
-  background: linear-gradient(to right, rgb(69, 138, 175) 0%, rgb(196, 222, 236) 50%, rgb(69, 138, 175));
+  background: linear-gradient(to right, rgb(69, 138, 175) 0%, rgb(196, 222, 236) 100%);
 }
 #bubble4 {
-  background: linear-gradient(to right, rgb(112, 141, 156) 0%, rgb(196, 222, 236) 50%, rgb(112, 141, 156));
+  background: linear-gradient(to right, rgb(112, 141, 156) 0%, rgb(196, 222, 236) 100%);
 }
 #bubble5 {
   text-align: center;
