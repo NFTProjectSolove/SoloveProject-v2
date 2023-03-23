@@ -59,10 +59,10 @@ export default function Appa({questiontext, answertext1, answertext2, answertext
               >
                 <p>{answertext1}</p>
                 <p >
-                  <a href="www.solove.com">{answertext2}</a>
+                  <a href="http://solove.site/Mint">{answertext2}</a>
                 </p>
                 <p>
-                  <a href="twitter.com/solove">{answertext3}</a>
+                  <a href="https://twitter.com/solovenft">{answertext3}</a>
                 </p>
                 <p>{answertext4}</p>
                 <p>{answertext5}</p>
