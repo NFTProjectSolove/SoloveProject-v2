@@ -1183,7 +1183,7 @@ h2, p{
   color: #ffffff;
   cursor: pointer;
   font-size: calc(15px + 0.4vw);
-  margin-left: 0.5vw;
+  margin-left: 0.3vw;
 }
 
 .rotate {
