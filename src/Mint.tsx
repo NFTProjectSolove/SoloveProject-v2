@@ -39,6 +39,7 @@ function Mint() {
   const [isDisabledByDate, setIsDisabledByDate] = useState<boolean>(true);
   const disabledDate = '2023-04-08T11:00:00Z';  //mint 날짜 넣어주면 됨 입력된 날짜에 열림 시간은 영국시간 기준
 
+
   const onMintClick = async () => {
     try {
       setMintLoading(true);

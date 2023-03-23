@@ -1,6 +1,5 @@
     import {BsPlusCircleFill,BsFillXCircleFill } from 'react-icons/bs'
     import React, {useEffect, useState, useRef} from 'react';
-    import mint from "./Mint";
 
     const PROJECT_NAME = process.env.REACT_APP_PROJECT_NAME
 
@@ -37,14 +36,9 @@
                             </a>
                         </li>
                         <li>
-                            <a target="_blank" rel='noreferrer' href={`https://twitter.com`}>
+                            <a target="_blank" rel='noreferrer' href={`https://twitter.com/SoloveNFT`}>
                                 <img src="/twitter.svg" alt='twitterLogo' />
                             </a>
-                        </li>
-                        <li>
-                            <a target="_blank" rel='noreferrer' href={`https://discord.com`}>
-                                <img src="/discord.svg" alt='discordLogo' />
-                            </a> 
                         </li>
                         <li><div className="snsButton snsCloseButton" onClick={()=>SetButtonState(false)}><BsFillXCircleFill /></div></li>
                     </ul>

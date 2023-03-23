@@ -1032,7 +1032,7 @@ h2, p{
 }
 
 #bubble1, #bubble2, #bubble3, #bubble4, #bubble5{
-  width : 50vw;
+  width : 40vw;
   height: 25vh;
   color :rgb(252, 252, 252);
   flex-direction: column;
@@ -1043,31 +1043,33 @@ h2, p{
   bottom: 0;
   display: none;
   margin: auto;
-  border: 2px solid rgb(120, 239, 199);
+  border: 2px solid rgb(255, 255, 255);
   border-radius: 10px;
   z-index: 4;
   align-items: center;
 }
 #bubble1 {
-  background: linear-gradient(to right, rgb(53, 106, 134) 0%, rgb(196, 222, 236) 50%, rgb(53, 106, 134));
+  background: linear-gradient(to right, rgb(53, 106, 134) 0%, rgb(196, 222, 236) 100%);
 }
 #bubble2 {
-  background: linear-gradient(to right, rgb(112, 141, 156) 0%, rgb(196, 222, 236) 50%, rgb(112, 141, 156));
+  background: linear-gradient(to right, rgb(112, 141, 156) 0%, rgb(196, 222, 236) 100%);
 }
 #bubble3 {
-  background: linear-gradient(to right, rgb(69, 138, 175) 0%, rgb(196, 222, 236) 50%, rgb(69, 138, 175));
+  background: linear-gradient(to right, rgb(69, 138, 175) 0%, rgb(196, 222, 236) 100%);
 }
 #bubble4 {
-  background: linear-gradient(to right, rgb(112, 141, 156) 0%, rgb(196, 222, 236) 50%, rgb(112, 141, 156));
+  background: linear-gradient(to right, rgb(112, 141, 156) 0%, rgb(196, 222, 236) 100%);
 }
 #bubble5 {
-  background: rgb(195, 0, 255);
+  text-align: center;
+  background: #000000;
+  overflow: hidden;
 }
 
 
 #Roadmapimg{
-  height : 80%;
-  max-width: 9  0%;
+  height : 60%;
+  max-width: 90%;
 }
 
 @keyframes gradient {
@@ -1095,7 +1097,7 @@ h2, p{
     top: 13vh;
   }
   #bubble1, #bubble2, #bubble3, #bubble4, #bubble5{
-    width : 95vw;
+    width : 90vw;
     height: 20vh;
     left: 0vw;
   }

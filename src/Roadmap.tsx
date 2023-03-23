@@ -1703,9 +1703,8 @@ function Roadmap(){
           <img src="/Roadmap4.png" id = "Roadmapimg" width='auto'></img>
           </div>
           <div id="bubble5" className="roadmapAnimation">
-          <button className='bubblebutton' onClick = {() => setHover(0)}>x</button>
-          <img src="/unicode.png" id = "Roadmapimg" width='auto'></img>
-
+            <button className='bubblebutton' onClick = {() => setHover(0)}>x</button>
+            11101100 10110100 10001000 11101011 10010011 10110001 11101101 10010101 10011001 11101010 10110101 10010000 00100000 10011001 11101010 10110101 10010000 00100000 10011001 11101010 10110101 10010000 00100000 00100000 10011001 11101010 10110101 10010000 00100000 00100000 10011001 11101010 10110101 10010000 00100000
           </div>
         </div>
         </>

@@ -3,10 +3,17 @@ import { FiPlus } from "react-icons/fi";
 
 type propsType = {
   questiontext:string;
-  answertext:string;
+  answertext1:string;
+  answertext2:string;
+  answertext3:string;
+  answertext4:string;
+  answertext5:string;
+  answertext6:string;
+  answertext7:string;
+  answertext8:string;
 }
 
-export default function Appa({questiontext, answertext}: propsType) {
+export default function Appa({questiontext, answertext1, answertext2, answertext3, answertext4, answertext5, answertext6, answertext7, answertext8}: propsType) {
   
 
   const [active, setActive] = useState(false);
@@ -50,9 +57,18 @@ export default function Appa({questiontext, answertext}: propsType) {
                 ref={contentRef}
                 className={active ? `answer answer-divider` : `answer`}
               >
-                <p>{answertext}</p>
-
-
+                <p>{answertext1}</p>
+                <p >
+                  <a href="www.solove.com">{answertext2}</a>
+                </p>
+                <p>
+                  <a href="twitter.com/solove">{answertext3}</a>
+                </p>
+                <p>{answertext4}</p>
+                <p>{answertext5}</p>
+                <p>{answertext6}</p>
+                <p>{answertext7}</p>
+                <p>{answertext8}</p>
               </div>
             </div>
 
