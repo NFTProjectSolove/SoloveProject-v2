@@ -1028,7 +1028,7 @@ h2, p{
 }
 
 .bubblebutton{
-  font-size: 1vw;
+  font-size: calc(12px + 0.6vw);
 }
 
 #bubble1, #bubble2, #bubble3, #bubble4, #bubble5{
