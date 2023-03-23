@@ -37,7 +37,7 @@ function Mint() {
   const isConnected = !!address;
   const [mintedTokenId, setMintedTokenId] = useState<string|number>(0);
   const [isDisabledByDate, setIsDisabledByDate] = useState<boolean>(true);
-  const disabledDate = '2023-04-08T11:00:00Z';  //mint 날짜 넣어주면 됨 입력된 날짜에 열림 시간은 영국시간 기준
+  const disabledDate = '2023-05-01T11:00:00Z';  //mint 날짜 넣어주면 됨 입력된 날짜에 열림 시간은 영국시간 기준
 
 
   const onMintClick = async () => {
@@ -90,9 +90,6 @@ function Mint() {
 
   useEffect(() => {
     const now = new Date();
-    console.log("Rendring on Date UseEffect")
-    console.log(now); // 한국시간
-    console.log(new Date(disabledDate)) // 왜 23시 한국시간으로 변환됨?
     if (now >= new Date(disabledDate)) {
       setIsDisabledByDate(false);
       
