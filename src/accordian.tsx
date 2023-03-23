@@ -43,7 +43,7 @@ export default function Appa({questiontext, answertext1, answertext2, answertext
             className={`question-section ${active}`}
             onClick={toggleAccordion}
           >
-            <div style = {{display: 'flex', alignItems: 'center',  justifyContent: 'center', flexDirection: 'column'}}>
+            <div style = {{display: 'flex',  justifyContent: 'center', flexDirection: 'column'}}>
               <div className="question-align">
                 <h4 className="question-style">
                   {questiontext}
